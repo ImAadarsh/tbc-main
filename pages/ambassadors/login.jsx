@@ -7,7 +7,7 @@ export default function Home() {
                 </div>
                 <div className="login_tab">
                     <div className="top_img">
-                        <img src="/Logo_Full.webp" alt="logo" />
+                        <img src="/Logo_Full.svg" alt="logo" />
                     </div>
                     <div className="login_section">
                         <div className="login_heading">
