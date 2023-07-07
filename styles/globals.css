@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --primary-background: #32E0FB;
+    --secondry-background: #EBFCFF;
+    --primary-text-color: #182135;
+    --secondry-text-color: #626264;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-background: #32E0FB;
+        --secondry-background: #EBFCFF;
+        --primary-text-color: #182135;
+        --secondry-text-color: #626264;
+    }
+}
