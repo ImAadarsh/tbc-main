@@ -3,7 +3,7 @@ export default function Home() {
         <>
             <div className="login_container">
                 <div className="side_image">
-                    <img src="/ambassadors_images/side_image.svg" alt="side image" />
+                    <img src="/ambassadors_images/login_image.webp" alt="side image" />
                 </div>
                 <div className="login_tab">
                     <div className="top_img">
