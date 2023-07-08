@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&display=swap");
 
 * {
     padding: 0px;
@@ -6,22 +9,99 @@
 }
 
 body {
-    overflow: hidden;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 :root {
-    --primary-background: #32E0FB;
-    --secondry-background: #EBFCFF;
+    --primary-background: #32e0fb;
+    --secondry-background: #ebfcff;
     --primary-text-color: #182135;
     --secondry-text-color: #626264;
+    /* fonts */
+    --t7: "Noto Sans";
+    --t2: "Expletus Sans";
+    --text-h5-bold: "Open Sans";
+
+    /* font sizes */
+    --t7-size: 0.88rem;
+    --t4-size: 1rem;
+    --t8-size: 0.75rem;
+    --t2-size: 1.5rem;
+    --font-size-21xl: 2.5rem;
+
+    /* Colors */
+    --font-l-f1-title: #3c4049;
+    --background-l-b9-primary-default: #2e4aff;
+    --background-l-b10-primary-hover: #6378ff;
+    --font-l-f6-buttons: #fff;
+    --foundation-neutral-neutral-500: #000;
+    --foundation-neutral-neutral-200: #8a8a8a;
+    --colors-text-dark-182135-100: #182135;
+    --foundation-neutral-neutral-50: #e6e6e6;
+    --foundation-primary-primary-500: #32e0fb;
+    --foundation-primary-primary-50: #ebfcff;
+    --foundation-neutral-neutral-300: #545454;
+    --foundation-info-info-100: #e0e4ff;
+    --foundation-warning-warning-100: #fff7cc;
+
+    /* Gaps */
+    --gap-base: 1rem;
+    --gap-xs: 0.75rem;
+
+    /* Paddings */
+    --padding-base: 1rem;
+    --padding-5xl: 1.5rem;
+
+    /* border radiuses */
+    --br-10xs: 3px;
+    --br-9xs: 4px;
+    --br-base: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-background: #32E0FB;
-        --secondry-background: #EBFCFF;
+        --primary-background: #32e0fb;
+        --secondry-background: #ebfcff;
         --primary-text-color: #182135;
         --secondry-text-color: #626264;
+        /* fonts */
+        --t7: "Noto Sans";
+        --t2: "Expletus Sans";
+        --text-h5-bold: "Open Sans";
+
+        /* font sizes */
+        --t7-size: 0.88rem;
+        --t4-size: 1rem;
+        --t8-size: 0.75rem;
+        --t2-size: 1.5rem;
+        --font-size-21xl: 2.5rem;
+
+        /* Colors */
+        --font-l-f1-title: #3c4049;
+        --background-l-b9-primary-default: #2e4aff;
+        --background-l-b10-primary-hover: #6378ff;
+        --font-l-f6-buttons: #fff;
+        --foundation-neutral-neutral-500: #000;
+        --foundation-neutral-neutral-200: #8a8a8a;
+        --colors-text-dark-182135-100: #182135;
+        --foundation-neutral-neutral-50: #e6e6e6;
+        --foundation-primary-primary-500: #32e0fb;
+        --foundation-primary-primary-50: #ebfcff;
+        --foundation-neutral-neutral-300: #545454;
+        --foundation-info-info-100: #e0e4ff;
+        --foundation-warning-warning-100: #fff7cc;
+
+        /* Gaps */
+        --gap-base: 1rem;
+        --gap-xs: 0.75rem;
+
+        /* Paddings */
+        --padding-base: 1rem;
+        --padding-5xl: 1.5rem;
+
+        /* border radiuses */
+        --br-10xs: 3px;
+        --br-9xs: 4px;
+        --br-base: 16px;
     }
 }

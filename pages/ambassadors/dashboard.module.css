@@ -1,0 +1,41 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    padding: 2.5rem 5rem;
+    -webkit-user-select: none;
+}
+
+.card {
+    display: flex;
+    width: 12.25rem;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 1rem;
+    border: 2px solid #fff;
+}
+
+.card_active {
+    border: 2px solid #000 !important;
+}
+
+.card h1 {
+    color: var(--foundation-neutral-neutral-500, #000);
+    font-family: Expletus Sans;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.5rem;
+    letter-spacing: 0.0125rem;
+}
+
+.card p {
+    color: var(--secondry-text-color);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.8rem;
+}
