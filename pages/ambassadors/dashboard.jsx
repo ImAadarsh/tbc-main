@@ -193,7 +193,7 @@ export default function Dashboard() {
                     .querySelector(`#${months[v]}`)
                     .classList.remove(Style.selectedMonthStyle);
             }
-        })
+        });
 
         if (card == "third") {
             document.querySelector(`#dashboard_list`).style.border = "none";
@@ -201,7 +201,7 @@ export default function Dashboard() {
             document.querySelector(`#dashboard_list`).style.border =
                 "1px solid var(--dont-use-neutral-neutral-50, #E6E6E6)";
         }
-    }, [ card, currentMonth ]);
+    }, [card, currentMonth]);
 
     return (
         <>
@@ -262,14 +262,28 @@ export default function Dashboard() {
                                 <>Address in the system ({addressAddedCount})</>
                             ) : null}
                         </h2>
-                        <div className={Style.left_dashboard_panel} >
-                            <div onClick={(e) => {
-                            if(document.querySelector(`#colender_popup`).style.display === "" || document.querySelector(`#colender_popup`).style.display === "none") {
-                                document.querySelector(`#colender_popup`).style.display = "block";
-                            }else {
-                                document.querySelector(`#colender_popup`).style.display = "none";
-                            }
-                        }} className={Style.colender}>
+                        <div className={Style.left_dashboard_panel}>
+                            <div
+                                onClick={(e) => {
+                                    if (
+                                        document.querySelector(
+                                            `#colender_popup`,
+                                        ).style.display === "" ||
+                                        document.querySelector(
+                                            `#colender_popup`,
+                                        ).style.display === "none"
+                                    ) {
+                                        document.querySelector(
+                                            `#colender_popup`,
+                                        ).style.display = "block";
+                                    } else {
+                                        document.querySelector(
+                                            `#colender_popup`,
+                                        ).style.display = "none";
+                                    }
+                                }}
+                                className={Style.colender}
+                            >
                                 <h3>{months[currentMonth]} 2023</h3>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -297,7 +311,10 @@ export default function Dashboard() {
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <div id="colender_popup" className={Style.colender_popup}>
+                                <div
+                                    id="colender_popup"
+                                    className={Style.colender_popup}
+                                >
                                     <div className={Style.colender_popup_head}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -309,9 +326,9 @@ export default function Dashboard() {
                                             <path
                                                 d="M15 6L9 12L15 18"
                                                 stroke="#989FAE"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
                                             />
                                         </svg>
                                         <h3>2023</h3>
@@ -325,9 +342,9 @@ export default function Dashboard() {
                                             <path
                                                 d="M9 18L15 12L9 6"
                                                 stroke="#989FAE"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
                                             />
                                         </svg>
                                     </div>
@@ -335,11 +352,14 @@ export default function Dashboard() {
                                         {Object.keys(months).map((v) => {
                                             return (
                                                 <div
+                                                    key={v}
                                                     onClick={(e) => {
                                                         setCurrentMonth(v);
                                                     }}
                                                     id={months[v]}
-                                                    className={Style.monthsOption}
+                                                    className={
+                                                        Style.monthsOption
+                                                    }
                                                 >
                                                     {months[v]}
                                                 </div>
@@ -348,7 +368,12 @@ export default function Dashboard() {
                                     </div>
                                 </div>
                             </div>
-                            <button className={Style.add_button}>
+                            <button
+                                onClick={(e) => {
+                                    document.querySelector('#card_section').style.display = 'flex';
+                                }}
+                                className={Style.add_button}
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -384,6 +409,40 @@ export default function Dashboard() {
                                 </svg>
                                 Database
                             </button>
+                            <div id="card_section" className={Style.side_card_section}>
+                                <div className={Style.side_card}>
+                                    <div className={Style.side_card_head}>
+                                        <h1
+                                            style={{
+                                                fontFamily: "Expletus Sans",
+                                            }}
+                                        >
+                                            Database
+                                        </h1>
+                                        <div
+                                            className={Style.side_card_icon}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                document.querySelector('#card_section').style.display = 'none';
+                                            }}
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 16 16"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M6.22222 8L0 1.77778L1.77778 0L8 6.22222L14.2222 0L16 1.77778L9.77778 8L16 14.2222L14.2222 16L8 9.77778L1.77778 16L0 14.2222L6.22222 8Z"
+                                                    fill="black"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className={Style.side_card_body}></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div id="dashboard_list" className={Style.dashboard_list}>
@@ -471,7 +530,8 @@ export default function Dashboard() {
                         </div>
                         <div className={Style.popup_card_body}>
                             <h2>
-                                Money will be disbursed in the first week of {months[parseInt(currentMonth) + 1]}
+                                Money will be disbursed in the first week of{" "}
+                                {months[parseInt(currentMonth) + 1]}
                             </h2>
                         </div>
                     </div>

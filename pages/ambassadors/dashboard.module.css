@@ -221,3 +221,51 @@
     color: white;
     padding: 0.3rem 0.5rem;
 }
+
+.side_card_section {
+    background: var(--colors-dark-00000016, rgba(0, 0, 0, 0.16));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    -webkit-user-select: none;
+    z-index: 2;
+    display: none;
+}
+
+.side_card {
+    width: 25rem;
+    height: -webkit-fill-available;
+    flex-shrink: 0;
+    border-radius: 1.5rem 0 0 1.5rem;
+    background: var(--colors-light-ffffff-100, #FFF);
+    display: flex;
+    flex-direction: column;
+    color: #141B7B;
+    padding: 2rem;
+    align-items: center;
+}
+
+.side_card_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.side_card_icon {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: var(--colors-gray-f-5-f-5-f-5100, #F5F5F5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
