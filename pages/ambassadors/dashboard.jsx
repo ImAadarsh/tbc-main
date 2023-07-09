@@ -370,7 +370,9 @@ export default function Dashboard() {
                             </div>
                             <button
                                 onClick={(e) => {
-                                    document.querySelector('#card_section').style.display = 'flex';
+                                    document.querySelector(
+                                        "#card_section",
+                                    ).style.display = "flex";
                                 }}
                                 className={Style.add_button}
                             >
@@ -409,7 +411,10 @@ export default function Dashboard() {
                                 </svg>
                                 Database
                             </button>
-                            <div id="card_section" className={Style.side_card_section}>
+                            <div
+                                id="card_section"
+                                className={Style.side_card_section}
+                            >
                                 <div className={Style.side_card}>
                                     <div className={Style.side_card_head}>
                                         <h1
@@ -423,7 +428,9 @@ export default function Dashboard() {
                                             className={Style.side_card_icon}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                document.querySelector('#card_section').style.display = 'none';
+                                                document.querySelector(
+                                                    "#card_section",
+                                                ).style.display = "none";
                                             }}
                                         >
                                             <svg
@@ -440,7 +447,96 @@ export default function Dashboard() {
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className={Style.side_card_body}></div>
+                                    <div className={Style.side_card_body}>
+                                        <div className={Style.field}>
+                                            <label htmlFor="address">
+                                                Address<span>*</span>
+                                            </label>
+                                            <input type="text" name="address" />
+                                        </div>
+                                        <div className={Style.field}>
+                                            <label htmlFor="city">
+                                                City<span>*</span>
+                                            </label>
+                                            <input type="text" name="city" />
+                                        </div>
+                                        <div className={Style.field}>
+                                            <label htmlFor="state">
+                                                State<span>*</span>
+                                            </label>
+                                            <input type="text" name="state" />
+                                        </div>
+                                        <div className={Style.field}>
+                                            <label htmlFor="zip">
+                                                Zipcode<span>*</span>
+                                            </label>
+                                            <input type="text" name="zip" />
+                                        </div>
+                                        <div className={Style.field}>
+                                            <label htmlFor="dish">
+                                                Dish served<span>*</span>
+                                            </label>
+                                            <select name="dish" id="dish">
+                                                <option value="apple_pie">
+                                                    Apple pie
+                                                </option>
+                                                <option value="yes">No</option>
+                                            </select>
+                                        </div>
+                                        <div className={Style.field}>
+                                            <label htmlFor="menu">
+                                                Neby sticked on the wall
+                                                <span>*</span>
+                                            </label>
+                                            <select name="menu" id="menu">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </div>
+                                        <button
+                                            className={
+                                                Style.primary_button_field
+                                            }
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="25"
+                                                height="24"
+                                                viewBox="0 0 25 24"
+                                                fill="none"
+                                            >
+                                                <g clip-path="url(#clip0_337_1390)">
+                                                    <path
+                                                        d="M12.5 5V19"
+                                                        stroke="black"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                    <path
+                                                        d="M5.5 12H19.5"
+                                                        stroke="black"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_337_1390">
+                                                        <rect
+                                                            width="24"
+                                                            height="24"
+                                                            fill="white"
+                                                            transform="translate(0.5)"
+                                                        />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>
+                                                Add to database
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

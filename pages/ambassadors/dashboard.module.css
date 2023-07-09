@@ -269,3 +269,56 @@
     align-items: center;
     cursor: pointer;
 }
+
+.side_card_body {
+    width: 100%;
+    margin-top: 1rem;
+    overflow: auto;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.field label {
+    font-family: Noto Sans;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.field span {
+    margin-left: .4rem;
+    color: #FF5029;
+}
+
+.field input, .field select {
+    outline: none;
+    padding: 0.5rem 0;
+    color: var(--secondry-text-color);
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 3px solid var(--colors-gray-a-3-a-3-a-416, rgba(163, 163, 164, 0.16));
+}
+
+.primary_button_field {
+    display: flex;
+    height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--corner-radius-2, 3.125rem);
+    background: var(--primary-background);
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    width: -webkit-fill-available;
+    margin-top: 3rem;
+}
+
+.primary_button_field span {
+    margin-left: 0.5rem;
+}

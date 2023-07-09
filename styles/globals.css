@@ -12,6 +12,23 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888888a9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555b2;
+}
+
 :root {
     --primary-background: #32e0fb;
     --secondry-background: #ebfcff;
