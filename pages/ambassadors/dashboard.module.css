@@ -256,6 +256,7 @@
     align-items: center;
     width: 100%;
     position: relative;
+    color: var(--primary-text-color)
 }
 
 .side_card_icon {
@@ -287,6 +288,7 @@
     font-size: 0.875rem;
     font-weight: 700;
     margin-top: 2rem;
+    color: var(--primary-text-color)
 }
 
 .field span {
