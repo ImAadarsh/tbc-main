@@ -1,34 +1,6 @@
 import Style from "./dashboard.module.css";
 import Header from "../components/Header";
-import { useEffect, useState, Component, useRef } from "react";
-
-class MonthBox extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            value: this.props.value || "N/A",
-        };
-        this._handleClick = this._handleClick.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            value: nextProps.value || "N/A",
-        });
-    }
-
-    render() {
-        return (
-            <div className="box" onClick={this._handleClick}>
-                <label>{this.state.value}</label>
-            </div>
-        );
-    }
-
-    _handleClick(e) {
-        this.props.onClick && this.props.onClick(e);
-    }
-}
+import { useEffect, useState } from "react";
 
 const orders_data = [
     {
@@ -171,7 +143,6 @@ export default function Dashboard() {
     const [addressAddedCount, setAddressAddedCount] = useState(
         address_added.length,
     );
-    const [selectedMonths, setSelectedMonths] = useState(null);
 
     const pickerLang = {
         months: [
@@ -291,14 +262,14 @@ export default function Dashboard() {
                                 <>Address in the system ({addressAddedCount})</>
                             ) : null}
                         </h2>
-                        <div className={Style.left_dashboard_panel} onClick={(e) => {
+                        <div className={Style.left_dashboard_panel} >
+                            <div onClick={(e) => {
                             if(document.querySelector(`#colender_popup`).style.display === "" || document.querySelector(`#colender_popup`).style.display === "none") {
                                 document.querySelector(`#colender_popup`).style.display = "block";
                             }else {
                                 document.querySelector(`#colender_popup`).style.display = "none";
                             }
-                        }}>
-                            <div className={Style.colender}>
+                        }} className={Style.colender}>
                                 <h3>{months[currentMonth]} 2023</h3>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
