@@ -103,18 +103,7 @@ const orders_data = [
     },
 ];
 
-const address_added = [
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-    },
-];
+const address_added = [];
 
 const months = {
     1: "Jan",
@@ -144,30 +133,65 @@ export default function Dashboard() {
         address_added.length,
     );
 
-    const pickerLang = {
-        months: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-        ],
-        from: "From",
-        to: "To",
-    };
-    const [mvalue, setMvalue] = useState({ year: 2021, month: 5 });
+    const [formSuccess, setFormSuccess] = useState(true);
+    const [formError, setFormError] = useState(false);
+    const [error_str, setErrorStr] = useState("");
+    const [address_value, setAddressValue] = useState("");
+    const [city_value, setCityValue] = useState("");
+    const [state_value, setStateValue] = useState("");
+    const [zip_value, setZipValue] = useState("");
+    const [dish_value, setDishValue] = useState("");
+    const [stick_value, setStickValue] = useState(false);
 
-    const makeText = (m) => {
-        if (m && m.year && m.month)
-            return pickerLang.months[m.month - 1] + ". " + m.year;
-        return "?";
+    const addToDatabase = async () => {
+        if (
+            !address_value ||
+            !city_value ||
+            !state_value ||
+            !zip_value ||
+            !dish_value
+        ) {
+            setFormError(true);
+            setErrorStr("All fields are mendetory to fill.");
+        } else {
+            const res = await fetch(
+                `https://api.thebostoncravings.com/addresses/`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        authorization: `Bearer ${localStorage.getItem(
+                            "token",
+                        )}`,
+                    },
+                    body: JSON.stringify({
+                        ambassadorId: `${
+                            JSON.parse(localStorage.getItem("data"))._id
+                        }`,
+                        address: address_value,
+                        city: city_value,
+                        state: state_value,
+                        zipCode: zip_value,
+                        dishServed: dish_value,
+                        stick: true,
+                    }),
+                },
+            );
+
+            const data = await res.json();
+            console.log(data);
+            if (data.status) {
+                setFormSuccess(true);
+                setAddressValue("");
+                setCityValue("");
+                setStateValue("");
+                setZipValue("");
+                setDishValue("");
+                setStickValue(false);
+                setErrorStr("");
+                setFormError(false);
+            }
+        }
     };
 
     useEffect(() => {
@@ -202,6 +226,27 @@ export default function Dashboard() {
                 "1px solid var(--dont-use-neutral-neutral-50, #E6E6E6)";
         }
     }, [card, currentMonth]);
+
+    const fetchAddedAddress = async () => {
+        const data = await fetch(
+            `https://api.thebostoncravings.com/addresses/ambassador/${
+                JSON.parse(localStorage.getItem("data"))._id
+            }`,
+            {
+                method: "GET",
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+            },
+        );
+        const response = await data.json();
+        setAddressAdded(response.data);
+        setAddressAddedCount(response.data.length);
+    };
+
+    useEffect(() => {
+        fetchAddedAddress();
+    }, []);
 
     return (
         <>
@@ -422,7 +467,7 @@ export default function Dashboard() {
                                                 fontFamily: "Expletus Sans",
                                             }}
                                         >
-                                            Database
+                                            {!formSuccess && "Database"}
                                         </h1>
                                         <div
                                             className={Style.side_card_icon}
@@ -447,96 +492,219 @@ export default function Dashboard() {
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className={Style.side_card_body}>
-                                        <div className={Style.field}>
-                                            <label htmlFor="address">
-                                                Address<span>*</span>
-                                            </label>
-                                            <input type="text" name="address" />
-                                        </div>
-                                        <div className={Style.field}>
-                                            <label htmlFor="city">
-                                                City<span>*</span>
-                                            </label>
-                                            <input type="text" name="city" />
-                                        </div>
-                                        <div className={Style.field}>
-                                            <label htmlFor="state">
-                                                State<span>*</span>
-                                            </label>
-                                            <input type="text" name="state" />
-                                        </div>
-                                        <div className={Style.field}>
-                                            <label htmlFor="zip">
-                                                Zipcode<span>*</span>
-                                            </label>
-                                            <input type="text" name="zip" />
-                                        </div>
-                                        <div className={Style.field}>
-                                            <label htmlFor="dish">
-                                                Dish served<span>*</span>
-                                            </label>
-                                            <select name="dish" id="dish">
-                                                <option value="apple_pie">
-                                                    Apple pie
-                                                </option>
-                                                <option value="yes">No</option>
-                                            </select>
-                                        </div>
-                                        <div className={Style.field}>
-                                            <label htmlFor="menu">
-                                                Neby sticked on the wall
-                                                <span>*</span>
-                                            </label>
-                                            <select name="menu" id="menu">
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
-                                            </select>
-                                        </div>
-                                        <button
-                                            className={
-                                                Style.primary_button_field
-                                            }
-                                        >
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="25"
-                                                height="24"
-                                                viewBox="0 0 25 24"
-                                                fill="none"
+                                    {!formSuccess ? (
+                                        <div className={Style.side_card_body}>
+                                            <div className={Style.field}>
+                                                <label htmlFor="address">
+                                                    Address<span>*</span>
+                                                </label>
+                                                <input
+                                                    onChange={(e) => {
+                                                        setAddressValue(
+                                                            e.target.value,
+                                                        );
+                                                    }}
+                                                    value={address_value}
+                                                    type="text"
+                                                    name="address"
+                                                />
+                                            </div>
+                                            <div className={Style.field}>
+                                                <label htmlFor="city">
+                                                    City<span>*</span>
+                                                </label>
+                                                <input
+                                                    onChange={(e) => {
+                                                        setCityValue(
+                                                            e.target.value,
+                                                        );
+                                                    }}
+                                                    value={city_value}
+                                                    type="text"
+                                                    name="city"
+                                                />
+                                            </div>
+                                            <div className={Style.field}>
+                                                <label htmlFor="state">
+                                                    State<span>*</span>
+                                                </label>
+                                                <input
+                                                    onChange={(e) => {
+                                                        setStateValue(
+                                                            e.target.value,
+                                                        );
+                                                    }}
+                                                    value={state_value}
+                                                    type="text"
+                                                    name="state"
+                                                />
+                                            </div>
+                                            <div className={Style.field}>
+                                                <label htmlFor="zip">
+                                                    Zipcode<span>*</span>
+                                                </label>
+                                                <input
+                                                    onChange={(e) => {
+                                                        setZipValue(
+                                                            e.target.value,
+                                                        );
+                                                    }}
+                                                    value={zip_value}
+                                                    type="text"
+                                                    name="zip"
+                                                />
+                                            </div>
+                                            <div className={Style.field}>
+                                                <label htmlFor="dish">
+                                                    Dish served<span>*</span>
+                                                </label>
+                                                <select
+                                                    onChange={(e) => {
+                                                        setDishValue(
+                                                            e.target.value,
+                                                        );
+                                                    }}
+                                                    select={dish_value}
+                                                    name="dish"
+                                                    id="dish"
+                                                >
+                                                    <option value="apple_pie">
+                                                        Apple pie
+                                                    </option>
+                                                    <option value="yes">
+                                                        No
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div className={Style.field}>
+                                                <label htmlFor="menu">
+                                                    Neby sticked on the wall
+                                                    <span>*</span>
+                                                </label>
+                                                <select
+                                                    onChange={(e) => {
+                                                        setStickValue(
+                                                            e.target.value ==
+                                                                "true",
+                                                        );
+                                                    }}
+                                                    name="menu"
+                                                    id="menu"
+                                                >
+                                                    <option value="true">
+                                                        Yes
+                                                    </option>
+                                                    <option value="false">
+                                                        No
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <button
+                                                className={
+                                                    Style.primary_button_field
+                                                }
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    addToDatabase();
+                                                }}
                                             >
-                                                <g clip-path="url(#clip0_337_1390)">
-                                                    <path
-                                                        d="M12.5 5V19"
-                                                        stroke="black"
-                                                        strokeWidth="2"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                    />
-                                                    <path
-                                                        d="M5.5 12H19.5"
-                                                        stroke="black"
-                                                        strokeWidth="2"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                    />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_337_1390">
-                                                        <rect
-                                                            width="24"
-                                                            height="24"
-                                                            fill="white"
-                                                            transform="translate(0.5)"
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="25"
+                                                    height="24"
+                                                    viewBox="0 0 25 24"
+                                                    fill="none"
+                                                >
+                                                    <g clipPath="url(#clip0_337_1390)">
+                                                        <path
+                                                            d="M12.5 5V19"
+                                                            stroke="black"
+                                                            strokeWidth="2"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
                                                         />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                            <span>
-                                                Add to database
-                                            </span>
-                                        </button>
-                                    </div>
+                                                        <path
+                                                            d="M5.5 12H19.5"
+                                                            stroke="black"
+                                                            strokeWidth="2"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_337_1390">
+                                                            <rect
+                                                                width="24"
+                                                                height="24"
+                                                                fill="white"
+                                                                transform="translate(0.5)"
+                                                            />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <span>Add to database</span>
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <div className={Style.side_card_body}>
+                                            <div className={Style.success_alert}>
+                                                <img style={{height: '10rem'}} src="/ambassadors_images/success_gif.webp" alt="success" />
+                                                <h3>Address added successfully</h3>
+                                            </div>
+                                            <button
+                                                className={
+                                                    Style.primary_button_field
+                                                }
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setFormSuccess(false);
+                                                }}
+                                                style={{
+                                                    position: "fixed",
+                                                    bottom: "2rem",
+                                                    margin: "0 1.5rem 0 0",
+                                                }}
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="25"
+                                                    height="24"
+                                                    viewBox="0 0 25 24"
+                                                    fill="none"
+                                                >
+                                                    <g clipPath="url(#clip0_337_1390)">
+                                                        <path
+                                                            d="M12.5 5V19"
+                                                            stroke="black"
+                                                            strokeWidth="2"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                        <path
+                                                            d="M5.5 12H19.5"
+                                                            stroke="black"
+                                                            strokeWidth="2"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_337_1390">
+                                                            <rect
+                                                                width="24"
+                                                                height="24"
+                                                                fill="white"
+                                                                transform="translate(0.5)"
+                                                            />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <span>
+                                                    Add more to database
+                                                </span>
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -573,11 +741,24 @@ export default function Dashboard() {
                                             <th>Date & time</th>
                                         </tr>
                                         {addressAdded.map((v, i) => {
+                                            const someDate = new Date(
+                                                v.timeStamp,
+                                            );
                                             return (
                                                 <tr key={i}>
-                                                    <td>{v.street_address}</td>
-                                                    <td>{v.places}</td>
-                                                    <td>{v.date_time}</td>
+                                                    <td>{v.address}</td>
+                                                    <td>{v.city}</td>
+                                                    <td>
+                                                        {
+                                                            months[
+                                                                someDate.getMonth() +
+                                                                    1
+                                                            ]
+                                                        }{" "}
+                                                        {someDate.getDate()},{" "}
+                                                        {someDate.getFullYear()}{" "}
+                                                        {someDate.toLocaleTimeString()}
+                                                    </td>
                                                 </tr>
                                             );
                                         })}

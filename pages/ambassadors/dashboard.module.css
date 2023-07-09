@@ -275,6 +275,7 @@
     width: 100%;
     margin-top: 1rem;
     overflow: auto;
+    height: inherit;
 }
 
 .field {
@@ -323,4 +324,24 @@
 
 .primary_button_field span {
     margin-left: 0.5rem;
+}
+
+.success_alert {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.success_alert h3 {
+    margin-top: 2rem;
+    color: var(--colors-text-dark-111111100, #111);
+    text-align: center;
+    font-family: Expletus Sans;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem;
+    letter-spacing: 0.0125rem;
 }

@@ -1,8 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
 
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const router = new useRouter();
+
+    const handelLogin = () => {
+        if (email && password) {
+            fetch('https://api.thebostoncravings.com/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    userType: "ambassador"
+                }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.token) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('data', JSON.stringify(data.user[0]));
+                    router.push('/ambassadors/dashboard');
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+           router.push('/ambassadors/dashboard');
+        }
+    }, []);
 
     return (
         <>
@@ -26,7 +65,9 @@ export default function Home() {
                                 </div>
                                 <div className="field">
                                     <label htmlFor="email">EMAIL ADDRESS</label>
-                                    <input type="email" name="email" id="email" />
+                                    <input onChange={(e) => {
+                                        setEmail(e.target.value);
+                                    }} type="email" name="email" id="email" value={email} />
                                 </div>
                             </div>
                             <div className="login_filed">
@@ -35,10 +76,14 @@ export default function Home() {
                                 </div>
                                 <div className="field">
                                     <label htmlFor="password">PASSWORD</label>
-                                    <input type="password" name="password" id="password" />
+                                    <input onChange={(e) => {
+                                        setPassword(e.target.value);
+                                    }} type="password" name="password" id="password" value={password} />
                                 </div>
                             </div>
-                            <button className="primary_button">Signin</button>
+                            <button onClick={() => {
+                                handelLogin()
+                            }} className="primary_button">Signin</button>
                         </div>
                     </div>
                     <div className="login_footer"></div>

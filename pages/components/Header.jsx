@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Style from "./Header.module.css";
+import { useRouter } from "next/router";
 
 export default function Header() {
 
-    const [ logoutBtn, setLogoutBtn ] = useState(false);
+    const [ userData, setUserData ] = useState({});
+    const router = useRouter();
+
+    const logout = () => {
+        localStorage.removeItem("token");
+        router.push("/ambassadors");
+    }
+
+    useEffect(() => {
+        setUserData(JSON.parse(localStorage.getItem('data')));
+    }, []);
 
     return (
         <>
@@ -21,7 +32,7 @@ export default function Header() {
                     }} className={Style.login_section}>
                         <img src="/user_image.svg" alt="img" className={Style.login_image} />
                         <div className={Style.login_dorpdown}>
-                            <h3>Mark Clarke</h3>
+                            <h3>{userData.name}</h3>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -50,7 +61,9 @@ export default function Header() {
                             </svg>
                         </div>
                     </div>
-                    <div id="logout_btn" className={Style.popup_button}>
+                    <div onClick={() => {
+                        logout();
+                    }} id="logout_btn" className={Style.popup_button}>
                         <img src="/logout.svg" alt="logout" />
                         <h4>Logout</h4>
                     </div>
