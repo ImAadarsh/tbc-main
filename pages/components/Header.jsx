@@ -8,12 +8,18 @@ export default function Header() {
     const router = useRouter();
 
     const logout = () => {
-        localStorage.removeItem("token");
-        router.push("/ambassadors");
+        if(localStorage.getItem("token")) {
+            localStorage.removeItem("token");
+            router.push("/ambassadors");
+        }
     }
 
     useEffect(() => {
-        setUserData(JSON.parse(localStorage.getItem('data')));
+        if(!localStorage.getItem('token')) {
+            router.push('/ambassadors');
+        }else {
+            setUserData(JSON.parse(localStorage.getItem('data')));
+        }
     }, []);
 
     return (
