@@ -90,3 +90,63 @@
     cursor: pointer;
     font-weight: 600;
 }
+
+@media screen and (max-width: 1000px) {
+    .side_image {
+        display: none;
+    }
+
+    .login_fileds .primary_button {
+        width: -webkit-fill-available;
+        border-radius: 0.75rem;
+    }
+
+    .top_img {
+        width: -webkit-fill-available;
+        margin-left: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .login_footer {
+        display: none;
+    }
+    
+    .login_tab {
+        justify-content: space-between;
+    }
+
+    .login_section {
+        display: flex;
+        flex-direction: column;
+        height: -webkit-fill-available;
+        padding-top: 3rem;
+    }
+
+    .login_fileds button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .login_filed_image {
+        display: none;
+    }
+
+    .login_section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: -webkit-fill-available;
+    }
+
+    .field {
+        margin-left: 0;
+        width: -webkit-fill-available;
+    }
+
+    .login_heading {
+        margin-bottom: 2rem;
+    }
+}
