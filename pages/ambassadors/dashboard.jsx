@@ -251,8 +251,9 @@ export default function Dashboard() {
     useEffect(() => {
         if (!localStorage.getItem('token')) {
             router.push('/ambassadors');
+        }else {
+            fetchAddedAddress();
         }
-        fetchAddedAddress();
     }, []);
 
     return (
