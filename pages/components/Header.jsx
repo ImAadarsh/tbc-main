@@ -10,6 +10,7 @@ export default function Header() {
     const logout = () => {
         if(localStorage.getItem("token")) {
             localStorage.removeItem("token");
+            localStorage.removeItem("data");
             router.push("/ambassadors");
         }
     }
