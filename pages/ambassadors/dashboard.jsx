@@ -1,6 +1,7 @@
 import Style from "./dashboard.module.css";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const orders_data = [
     {
@@ -133,7 +134,7 @@ export default function Dashboard() {
         address_added.length,
     );
 
-    const [formSuccess, setFormSuccess] = useState(true);
+    const [formSuccess, setFormSuccess] = useState(false);
     const [formError, setFormError] = useState(false);
     const [error_str, setErrorStr] = useState("");
     const [address_value, setAddressValue] = useState("");
@@ -240,11 +241,17 @@ export default function Dashboard() {
             },
         );
         const response = await data.json();
-        setAddressAdded(response.data);
-        setAddressAddedCount(response.data.length);
+        if(data.status && response.data) {
+            setAddressAdded(response.data);
+            setAddressAddedCount(response.data.length);
+        }
     };
 
+    const router = new useRouter();
     useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            router.push('/ambassadors');
+        }
         fetchAddedAddress();
     }, []);
 
