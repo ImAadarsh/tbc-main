@@ -50,3 +50,18 @@
     display: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1000px) {
+    .login_dorpdown h3 {
+        display: none;
+    }
+
+    .header {
+        justify-content: space-between;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .popup_button {
+        right: 1.2rem;
+    }
+}

@@ -102,7 +102,7 @@
     font-size: 0.8rem;
     font-weight: 700;
     font-family: Noto Sans;
-    border-bottom: 1px solid #E6E6E6;;
+    border-bottom: 1px solid #E6E6E6;
 }
 
 .table td {
@@ -344,4 +344,165 @@
     font-weight: 600;
     line-height: 2.5rem;
     letter-spacing: 0.0125rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .dashboard {
+        flex-direction: column;
+        padding: 0 0;
+    }
+
+    .right {
+        margin-left: 0;
+    }
+
+    .left_dashboard_panel {
+        flex-direction: column-reverse;
+        row-gap: 1.5rem;
+    }
+
+    .dashboard_head {
+        align-items: start;
+        padding: 1.2rem;
+    }
+
+    .dashboard_head h2 {
+        font-size: 1.2rem;
+    }
+
+    .colender {
+        margin-right: 0;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1rem;
+        overflow: auto;
+        padding: 1.2rem;
+    }
+
+    .table tbody tr:first-child  {
+        display: none;
+    }
+
+    .table tr {
+        padding: 1.2rem;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        border-radius: 0.25rem;
+        border: 1px solid var(--colors-text-dark-666666100, #626264);
+    }
+
+    .table td {
+        border-bottom: none;
+        padding: 0;
+        padding: 0.3rem;
+        display: flex;
+    }
+
+    .table td::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background: url("/map.svg");
+        margin-right: 0.6rem;
+        margin-top: 0.3rem;
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table td:nth-child(2):before {
+        background: url("/Location.svg");
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.6rem;
+        margin-top: 0.3rem;
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table td:nth-child(3):before {
+        background: url("/tabler-icon-calendar-event.svg");
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.6rem;
+        margin-top: 0.3rem;
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table td:nth-child(4):before {
+        background: url("/tabler-icon-flame.svg");
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.6rem;
+        margin-top: 0.3rem;
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table td:nth-child(5):before {
+        background: url("/");
+        content: '$';
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.6rem;
+        margin-top: 0.3rem;
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .table td:nth-child(2) {
+        color: var(--secondry-text-color);
+    }
+
+    .table td:nth-child(3) {
+        color: var(--secondry-text-color);
+    }
+
+    .table td:nth-child(4) {
+        color: var(--secondry-text-color);
+    }
+
+    .dashboard_list {
+        padding: 1.2rem;
+        border: none !important;
+        margin-top: 0;
+    }
+
+    .colender_popup {
+        right: 0.6rem;
+        top: 29rem;
+    }
+
+    .side_card {
+        border-radius: 0;
+        width: -webkit-fill-available;
+    }
+
+    .side_card button {
+        border-radius: 0.75rem;
+    }
 }
