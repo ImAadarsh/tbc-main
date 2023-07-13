@@ -249,11 +249,11 @@ export default function Dashboard() {
 
     const router = new useRouter();
     useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            router.push('/ambassadors');
-        }else {
-            fetchAddedAddress();
-        }
+        // if (!localStorage.getItem('token')) {
+        //     router.push('/ambassadors');
+        // }else {
+        //     fetchAddedAddress();
+        // }
     }, []);
 
     return (
@@ -421,7 +421,7 @@ export default function Dashboard() {
                                     </div>
                                 </div>
                             </div>
-                            <button
+                            { card === "second" && <button
                                 onClick={(e) => {
                                     document.querySelector(
                                         "#card_section",
@@ -463,7 +463,7 @@ export default function Dashboard() {
                                     </defs>
                                 </svg>
                                 Database
-                            </button>
+                            </button>}
                             <div
                                 id="card_section"
                                 className={Style.side_card_section}

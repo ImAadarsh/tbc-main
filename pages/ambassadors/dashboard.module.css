@@ -494,7 +494,7 @@
 
     .colender_popup {
         right: 0.6rem;
-        top: 29rem;
+        top: 25rem;
     }
 
     .side_card {
@@ -504,5 +504,15 @@
 
     .side_card button {
         border-radius: 0.75rem;
+    }
+    
+    .popup_card {
+        width: -webkit-fill-available;
+        height: 17rem;
+        margin: 1.5rem;
+    }
+
+    .cross_icon {
+        bottom: 3rem;
     }
 }
