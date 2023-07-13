@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     ).then(response => response.json());
     
     res.json({
-        key: API_KEY,
+        key: `${API_KEY}`,
         data: data
     });
 }
