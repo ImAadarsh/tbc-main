@@ -261,8 +261,7 @@ export default function Dashboard() {
     const addressSuggestion = async (text) => {
         if(text.length >= 4) {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_BASE_URL}/api/geoapi?text=${text}`,
-                
+                `https://maps.googleapis.com/maps/api/place/queryautocomplete/json?input=${text}&key=AIzaSyArEq_RndmmEKrlRyneCkWCcEO0KNSEXCM`
             );
             const data = await res.json();
             const all_suggestions = [];
