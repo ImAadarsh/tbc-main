@@ -346,6 +346,20 @@
     letter-spacing: 0.0125rem;
 }
 
+.suggestion_list p {
+    background: var(--secondry-background);
+    margin-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.2rem;
+    border-radius: 0.4rem;
+    margin-top: 0.2rem;
+}
+
+.suggestion_list p:hover {
+    font-weight: 500;
+}
+
 @media screen and (max-width: 1000px) {
     .dashboard {
         flex-direction: column;

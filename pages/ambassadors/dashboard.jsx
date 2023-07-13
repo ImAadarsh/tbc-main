@@ -144,6 +144,8 @@ export default function Dashboard() {
     const [dish_value, setDishValue] = useState("");
     const [stick_value, setStickValue] = useState(false);
 
+    const [ address_suggestions, setAddressSuggestions ] = useState([]);
+
     const addToDatabase = async () => {
         if (
             !address_value ||
@@ -174,7 +176,7 @@ export default function Dashboard() {
                         state: state_value,
                         zipCode: zip_value,
                         dishServed: dish_value,
-                        stick: true,
+                        stick: stick_value,
                     }),
                 },
             );
@@ -255,6 +257,21 @@ export default function Dashboard() {
         //     fetchAddedAddress();
         // }
     }, []);
+
+    const addressSuggestion = async (text) => {
+        if(text.length >= 4) {
+            const res = await fetch(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/api/geoapi?text=${text}`,
+                
+            );
+            const data = await res.json();
+            const all_suggestions = [];
+            for(let i = 0; i < data.predictions.length; i++) {
+                all_suggestions.push(data.predictions[i].description);
+            }
+            setAddressSuggestions(all_suggestions);
+        }
+    }
 
     return (
         <>
@@ -511,11 +528,24 @@ export default function Dashboard() {
                                                         setAddressValue(
                                                             e.target.value,
                                                         );
+                                                        addressSuggestion(e.target.value);
                                                     }}
                                                     value={address_value}
                                                     type="text"
                                                     name="address"
                                                 />
+                                                <div className={Style.suggestion_list}>
+                                                    {address_suggestions.map((v, i) => {
+                                                        return (
+                                                            <div key={i} className={Style.suggestion_item}>
+                                                                <p onClick={(e) => {
+                                                                    setAddressValue(v);
+                                                                    setAddressSuggestions([]);
+                                                                }} >{v}</p>
+                                                            </div>
+                                                        )
+                                                    })}
+                                                </div>
                                             </div>
                                             <div className={Style.field}>
                                                 <label htmlFor="city">
