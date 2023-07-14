@@ -353,8 +353,8 @@ export default function Dashboard() {
                                 }}
                                 className={Style.colender}
                             >
-                                <h3>{months[currentMonth]} 2023</h3>
-                                <svg
+                                { card === "first" && <h3>{months[currentMonth]} 2023</h3>}
+                                { card === "first" && <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
@@ -379,7 +379,7 @@ export default function Dashboard() {
                                             />
                                         </clipPath>
                                     </defs>
-                                </svg>
+                                </svg>}
                                 <div
                                     id="colender_popup"
                                     className={Style.colender_popup}
