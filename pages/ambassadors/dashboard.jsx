@@ -251,11 +251,11 @@ export default function Dashboard() {
 
     const router = new useRouter();
     useEffect(() => {
-        // if (!localStorage.getItem('token')) {
-        //     router.push('/ambassadors');
-        // }else {
-        //     fetchAddedAddress();
-        // }
+        if (!localStorage.getItem('token')) {
+            router.push('/ambassadors');
+        }else {
+            fetchAddedAddress();
+        }
     }, []);
 
     const addressSuggestion = async (text) => {
