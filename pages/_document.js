@@ -5,7 +5,7 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 <head>
-                    <title>The Boston ravings</title>
+                    <title>The Boston Cravings</title>
                 </head>
             </Head>
             <body>
