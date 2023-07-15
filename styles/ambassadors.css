@@ -89,6 +89,7 @@
     font-size: 1.25rem;
     cursor: pointer;
     font-weight: 600;
+    color: #000;
 }
 
 @media screen and (max-width: 1000px) {
@@ -98,11 +99,13 @@
 
     .login_fileds .primary_button {
         width: -webkit-fill-available;
+        width: -moz-available;
         border-radius: 0.75rem;
     }
 
     .top_img {
         width: -webkit-fill-available;
+        width: -moz-available;
         margin-left: 1.5rem;
         margin-top: 3rem;
     }
@@ -118,14 +121,15 @@
     .login_section {
         display: flex;
         flex-direction: column;
-        height: -webkit-fill-available;
+        height: inherit;
         padding-top: 3rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: -webkit-fill-available;
+        width: -moz-available;
     }
 
     .login_fileds button {
-        position: fixed;
-        bottom: 0;
-        left: 0;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
         margin-bottom: 1.2rem;
@@ -135,15 +139,10 @@
         display: none;
     }
 
-    .login_section {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        width: -webkit-fill-available;
-    }
-
     .field {
         margin-left: 0;
         width: -webkit-fill-available;
+        width: -moz-available;
     }
 
     .login_heading {

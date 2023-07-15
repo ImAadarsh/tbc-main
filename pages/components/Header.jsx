@@ -27,7 +27,7 @@ export default function Header() {
         <>
             <header className={Style.header}>
                 <div className={Style.left}>
-                    <img src="/Logo_Full.svg" alt="logo" className={Style.logo}/>
+                    <img src="/logo_widht_high.svg" alt="logo" className={Style.logo}/>
                 </div>
                 <div className={Style.right}>
                     <div onClick={(e) => {

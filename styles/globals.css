@@ -7,6 +7,8 @@
     padding: 0px;
     margin: 0px;
     -webkit-tap-highlight-color: transparent;
+    scrollbar-color: #555555b2 !important;
+    scrollbar-width: thin !important;
 }
 
 body {

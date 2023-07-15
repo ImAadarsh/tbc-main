@@ -141,8 +141,8 @@ export default function Dashboard() {
     const [city_value, setCityValue] = useState("");
     const [state_value, setStateValue] = useState("");
     const [zip_value, setZipValue] = useState("");
-    const [dish_value, setDishValue] = useState("");
-    const [stick_value, setStickValue] = useState(false);
+    const [dish_value, setDishValue] = useState("apple_pie");
+    const [stick_value, setStickValue] = useState(true);
 
     const [ address_suggestions, setAddressSuggestions ] = useState([]);
 
@@ -251,11 +251,11 @@ export default function Dashboard() {
 
     const router = new useRouter();
     useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            router.push('/ambassadors');
-        }else {
-            fetchAddedAddress();
-        }
+        // if (!localStorage.getItem('token')) {
+        //     router.push('/ambassadors');
+        // }else {
+        //     fetchAddedAddress();
+        // }
     }, []);
 
     const addressSuggestion = async (text) => {
@@ -328,7 +328,7 @@ export default function Dashboard() {
                             {card == "first" ? (
                                 <>Orders placed ({placedOrderCount})</>
                             ) : card == "second" ? (
-                                <>Address in the system ({addressAddedCount})</>
+                                <>Address ({addressAddedCount})</>
                             ) : null}
                         </h2>
                         <div className={Style.left_dashboard_panel}>
@@ -608,8 +608,17 @@ export default function Dashboard() {
                                                     <option value="apple_pie">
                                                         Apple pie
                                                     </option>
-                                                    <option value="yes">
-                                                        No
+                                                    <option value="angel">
+                                                        Angel food cake
+                                                    </option>
+                                                    <option value="strawberry">
+                                                        Strawberry crumble
+                                                    </option>
+                                                    <option value="almond">
+                                                        Almond and date cake
+                                                    </option>
+                                                    <option value="ice-cream">
+                                                        Ice-cream
                                                     </option>
                                                 </select>
                                             </div>
@@ -685,7 +694,7 @@ export default function Dashboard() {
                                     ) : (
                                         <div className={Style.side_card_body}>
                                             <div className={Style.success_alert}>
-                                                <img style={{height: '10rem'}} src="/ambassadors_images/success_gif.webp" alt="success" />
+                                                <img style={{height: '10rem'}} src="/ambassadors_images/success_gif.gif" alt="success" />
                                                 <h3>Address added successfully</h3>
                                             </div>
                                             <button
