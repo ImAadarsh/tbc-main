@@ -44,7 +44,7 @@ export default function Dashboard() {
     const [address_value, setAddressValue] = useState("");
     const [city_value, setCityValue] = useState("");
     const [state_value, setStateValue] = useState("");
-    const [zip_value, setZipValue] = useState("");
+    const [zip_value, setZipValue] = useState(0);
     const [dish_value, setDishValue] = useState("apple_pie");
     const [stick_value, setStickValue] = useState(true);
     const [ address_suggestions, setAddressSuggestions ] = useState([]);
@@ -92,7 +92,7 @@ export default function Dashboard() {
                 setAddressValue("");
                 setCityValue("");
                 setStateValue("");
-                setZipValue("");
+                setZipValue(0);
                 setDishValue("apple_pie");
                 setStickValue(false);
                 setErrorStr("");
@@ -194,7 +194,7 @@ export default function Dashboard() {
             const data = await res.json();
             setCityValue(data.city);
             setStateValue(data.state);
-            setZipValue(data.zip);
+            setZipValue(parseInt(data.zip));
         }
     }
 
@@ -590,11 +590,11 @@ export default function Dashboard() {
                                                 <input
                                                     onChange={(e) => {
                                                         setZipValue(
-                                                            e.target.value,
+                                                            parseInt(e.target.value),
                                                         );
                                                     }}
                                                     value={zip_value}
-                                                    type="text"
+                                                    type="number"
                                                     name="zip"
                                                 />
                                             </div>
