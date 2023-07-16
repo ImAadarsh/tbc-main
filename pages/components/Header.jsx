@@ -71,8 +71,14 @@ export default function Header() {
                     <div onClick={() => {
                         logout();
                     }} id="logout_btn" className={Style.popup_button}>
-                        <img src="/logout.svg" alt="logout" />
-                        <h4>Logout</h4>
+                        <div className={Style.loged_user_section}>
+                            <img src="/user_image.svg" alt="img" className={Style.login_image} />
+                            <h3>{userData.name}</h3>
+                        </div>
+                        <div className={Style.logout_btn}>
+                            <img src="/logout.svg" alt="logout" />
+                            <h4>Logout</h4>
+                        </div>
                     </div>
                 </div>
             </header>

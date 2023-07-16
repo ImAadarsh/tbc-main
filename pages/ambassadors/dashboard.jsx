@@ -44,11 +44,15 @@ export default function Dashboard() {
     const [address_value, setAddressValue] = useState("");
     const [city_value, setCityValue] = useState("");
     const [state_value, setStateValue] = useState("");
-    const [zip_value, setZipValue] = useState(0);
+    const [zip_value, setZipValue] = useState("");
     const [dish_value, setDishValue] = useState("apple_pie");
     const [stick_value, setStickValue] = useState(true);
     const [ address_suggestions, setAddressSuggestions ] = useState([]);
     const [extraSuggestions, setExtraSuggestions] = useState({});
+
+    const isNotNan = (value) => {
+        return !isNaN(value);
+    }
 
     const addToDatabase = async () => {
         if (
@@ -61,6 +65,11 @@ export default function Dashboard() {
             setFormError(true);
             setErrorStr("All fields are mendetory to fill.");
         } else {
+            if(!isNotNan(zip_value)) {
+                setFormError(true);
+                setErrorStr("Zipcode must be a number.");
+                return;
+            }
             const res = await fetch(
                 `https://api.thebostoncravings.com/addresses/`,
                 {
@@ -86,7 +95,6 @@ export default function Dashboard() {
             );
 
             const data = await res.json();
-            console.log(data);
             if (data.status) {
                 setFormSuccess(true);
                 setAddressValue("");
@@ -194,7 +202,7 @@ export default function Dashboard() {
             const data = await res.json();
             setCityValue(data.city);
             setStateValue(data.state);
-            setZipValue(parseInt(data.zip));
+            setZipValue(data.zip);
         }
     }
 
@@ -266,7 +274,6 @@ export default function Dashboard() {
             },
         );
         const response = await data.json();
-        console.log(response)
         if(data.status && response.message) {
             setMoneyDistributeText(response.message.slice(0, response.message.length - 2) + " " + months[parseInt(response.monthOfPayment)])
         }else {
@@ -523,7 +530,7 @@ export default function Dashboard() {
                                         </div>
                                     </div>
                                     {!formSuccess ? (
-                                        <div className={Style.side_card_body}>
+                                        <div id="apper_card_body" className={Style.side_card_body}>
                                             <div className={Style.field}>
                                                 <label htmlFor="address">
                                                     Address<span>*</span>
@@ -589,12 +596,10 @@ export default function Dashboard() {
                                                 </label>
                                                 <input
                                                     onChange={(e) => {
-                                                        setZipValue(
-                                                            parseInt(e.target.value),
-                                                        );
+                                                        setZipValue(e.target.value);
                                                     }}
                                                     value={zip_value}
-                                                    type="number"
+                                                    type="text"
                                                     name="zip"
                                                 />
                                             </div>
@@ -840,7 +845,6 @@ export default function Dashboard() {
                                 className={Style.cross_icon}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    // document.querySelector('#popup').style.display = 'none';
                                     setCard(previousCard);
                                 }}
                             >

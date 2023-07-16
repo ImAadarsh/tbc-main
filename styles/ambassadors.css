@@ -63,7 +63,7 @@
     font-size: 1.25rem;
     color: var(--secondry-text-color);
     margin-top: 0.3rem;
-    padding-bottom: .6rem;
+    padding-bottom: 0.6rem;
 }
 
 .field label {
@@ -117,7 +117,7 @@
     .login_footer {
         display: none;
     }
-    
+
     .login_tab {
         justify-content: space-between;
     }

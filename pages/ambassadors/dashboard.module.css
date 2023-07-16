@@ -91,7 +91,7 @@
 
 .dashboard_list {
     border-radius: 1rem;
-    border: 1px solid var(--dont-use-neutral-neutral-50, #E6E6E6);
+    border: 1px solid var(--dont-use-neutral-neutral-50, #e6e6e6);
     overflow: hidden;
     margin-top: 1.5rem;
 }
@@ -107,12 +107,12 @@
     font-size: 0.8rem;
     font-weight: 700;
     font-family: Noto Sans;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .table td {
     padding: 1rem 2rem;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid #e6e6e6;
     font-size: 1rem;
 }
 
@@ -124,10 +124,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background: #FFF;
+    background: #fff;
     box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.05);
     padding: 1rem 3rem;
-    border: 1px solid var(--dont-use-neutral-neutral-50, #E6E6E6);
+    border: 1px solid var(--dont-use-neutral-neutral-50, #e6e6e6);
 }
 
 .dashboard_total h3 {
@@ -135,7 +135,7 @@
     font-size: 1rem;
 }
 
-.dashboard_total h3 span{
+.dashboard_total h3 span {
     color: var(--primary-text-color);
     font-size: 1.3rem;
 }
@@ -158,11 +158,11 @@
     height: 25rem;
     flex-shrink: 0;
     border-radius: 1.5rem;
-    background: var(--colors-light-ffffff-100, #FFF);
+    background: var(--colors-light-ffffff-100, #fff);
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: #141B7B;
+    color: #141b7b;
     padding: 2rem;
     text-align: center;
 }
@@ -182,7 +182,7 @@
     height: 3rem;
     flex-shrink: 0;
     border-radius: 0.625rem;
-    background: var(--colors-gray-f-5-f-5-f-5100, #F5F5F5);
+    background: var(--colors-gray-f-5-f-5-f-5100, #f5f5f5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,7 +190,7 @@
 }
 
 .colender_popup {
-    border: 1px solid #E6E6E6;
+    border: 1px solid #e6e6e6;
     position: absolute;
     top: 10rem;
     background: white;
@@ -224,8 +224,8 @@
 
 .selectedMonthStyle {
     border-radius: 0.5rem;
-    background: var(--background-lb-10-primary-hover, #6378FF);
-    color: white;
+    background: var(--colors-primary-100, #32e0fb);
+    color: black;
     padding: 0.3rem 0.5rem;
 }
 
@@ -250,10 +250,10 @@
     height: -moz-available;
     flex-shrink: 0;
     border-radius: 1.5rem 0 0 1.5rem;
-    background: var(--colors-light-ffffff-100, #FFF);
+    background: var(--colors-light-ffffff-100, #fff);
     display: flex;
     flex-direction: column;
-    color: #141B7B;
+    color: #141b7b;
     padding: 2rem;
     align-items: center;
 }
@@ -264,7 +264,7 @@
     align-items: center;
     width: 100%;
     position: relative;
-    color: var(--primary-text-color)
+    color: var(--primary-text-color);
 }
 
 .side_card_icon {
@@ -272,7 +272,7 @@
     height: 3rem;
     flex-shrink: 0;
     border-radius: 0.625rem;
-    background: var(--colors-gray-f-5-f-5-f-5100, #F5F5F5);
+    background: var(--colors-gray-f-5-f-5-f-5100, #f5f5f5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -297,22 +297,24 @@
     font-size: 0.875rem;
     font-weight: 700;
     margin-top: 2rem;
-    color: var(--primary-text-color)
+    color: var(--primary-text-color);
 }
 
 .field span {
-    margin-left: .4rem;
-    color: #FF5029;
+    margin-left: 0.4rem;
+    color: #ff5029;
 }
 
-.field input, .field select {
+.field input,
+.field select {
     outline: none;
     padding: 0.5rem 0;
     color: var(--secondry-text-color);
     width: 100%;
     font-size: 1.2rem;
     border: none;
-    border-bottom: 3px solid var(--colors-gray-a-3-a-3-a-416, rgba(163, 163, 164, 0.16));
+    border-bottom: 3px solid
+        var(--colors-gray-a-3-a-3-a-416, rgba(163, 163, 164, 0.16));
 }
 
 .primary_button_field {
@@ -385,7 +387,6 @@
 
     .left_dashboard_panel {
         flex-direction: column-reverse;
-        row-gap: 1.5rem;
     }
 
     .dashboard_head {
@@ -414,7 +415,7 @@
         gap: 0.5rem;
     }
 
-    .table tbody tr:first-child  {
+    .table tbody tr:first-child {
         display: none;
     }
 
@@ -437,7 +438,7 @@
     }
 
     .table td::before {
-        content: '';
+        content: "";
         width: 1rem;
         height: 1rem;
         background: url("/map.svg");
@@ -452,7 +453,7 @@
 
     .table td:nth-child(2):before {
         background: url("/Location.svg");
-        content: '';
+        content: "";
         width: 1rem;
         height: 1rem;
         margin-right: 0.6rem;
@@ -466,7 +467,7 @@
 
     .table td:nth-child(3):before {
         background: url("/tabler-icon-flame.svg");
-        content: '';
+        content: "";
         width: 1rem;
         height: 1rem;
         margin-right: 0.6rem;
@@ -480,7 +481,7 @@
 
     .table td:nth-child(4):before {
         background: url("/");
-        content: '$';
+        content: "$";
         width: 1rem;
         height: 1rem;
         margin-right: 0.6rem;
@@ -509,19 +510,31 @@
 
     .colender_popup {
         right: 0.6rem;
-        top: 22rem;
+        top: 21rem;
+    }
+
+    .colender_popup_body {
+        row-gap: 1rem;
+        column-gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .side_card_section {
+        background: white;
     }
 
     .side_card {
         border-radius: 0;
         width: -webkit-fill-available;
         width: -moz-available;
+        animation: all 0.6s ease-in-out;
+        animation: transformUp 0.6s ease-in-out;
     }
 
     .side_card button {
         border-radius: 0.75rem;
     }
-    
+
     .popup_card {
         width: -webkit-fill-available;
         width: -moz-available;
@@ -531,6 +544,19 @@
 
     .cross_icon {
         bottom: 3rem;
+    }
+}
+
+/* transform up keyframe buncing */
+@keyframes transformUp {
+    0% {
+        transform: translateY(100%);
+    }
+    90% {
+        transform: translateY(-8%);
+    }
+    100% {
+        transform: translateY(0%);
     }
 }
 
@@ -597,5 +623,42 @@
         position: sticky;
         top: 7rem;
         left: 0;
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes change {
+    0%,
+    12.66%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    16.66%,
+    29.32% {
+        transform: translate3d(0, -25%, 0);
+    }
+    33.32%,
+    45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+    49.98%,
+    62.64% {
+        transform: translate3d(0, -75%, 0);
+    }
+    66.64%,
+    79.3% {
+        transform: translate3d(0, -50%, 0);
+    }
+    83.3%,
+    95.96% {
+        transform: translate3d(0, -25%, 0);
     }
 }
