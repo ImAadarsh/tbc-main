@@ -3,106 +3,7 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const orders_data = [
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-    {
-        street_address: "185 Devonshire St. Boston",
-        places: "Brighton",
-        date_time: "Jun 12, 2023 09:30 AM",
-        order_placed: "01",
-        order_value: "20.99",
-    },
-];
+const orders_data = [];
 
 const address_added = [];
 
@@ -123,6 +24,7 @@ const months = {
 
 export default function Dashboard() {
     const [card, setCard] = useState("first");
+    const [previousCard, setPreviousCard] = useState("first");
     const [orders, setOrders] = useState(orders_data);
     const [placedOrderCount, setPlacedOrderCount] = useState(
         orders_data.length,
@@ -133,6 +35,8 @@ export default function Dashboard() {
     const [addressAddedCount, setAddressAddedCount] = useState(
         address_added.length,
     );
+    const [totla_order_value, setTotalOrderValue] = useState(0);
+    const [money_destribute_text, setMoneyDistributeText] = useState("");
 
     const [formSuccess, setFormSuccess] = useState(false);
     const [formError, setFormError] = useState(false);
@@ -189,10 +93,13 @@ export default function Dashboard() {
                 setCityValue("");
                 setStateValue("");
                 setZipValue("");
-                setDishValue("");
+                setDishValue("apple_pie");
                 setStickValue(false);
                 setErrorStr("");
                 setFormError(false);
+            }else {
+                setFormError(true);
+                setErrorStr(data.message);
             }
         }
     };
@@ -249,19 +156,20 @@ export default function Dashboard() {
         }
     };
 
-    const router = new useRouter();
-    useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            router.push('/ambassadors');
-        }else {
-            fetchAddedAddress();
-        }
-    }, []);
-
     const addressSuggestion = async (text) => {
         if(text.length >= 4) {
             const res = await fetch(
-                `https://maps.googleapis.com/maps/api/place/queryautocomplete/json?input=${text}&key=AIzaSyArEq_RndmmEKrlRyneCkWCcEO0KNSEXCM`
+                `https://api.thebostoncravings.com/places`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        authorization: `Bearer ${localStorage.getItem("token")}`
+                    },
+                    body: JSON.stringify({
+                        input: text
+                    })
+                }
             );
             const data = await res.json();
             const all_suggestions = [];
@@ -272,6 +180,77 @@ export default function Dashboard() {
         }
     }
 
+    const router = new useRouter();
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            router.push('/ambassadors');
+        }else {
+            fetchAddedAddress();
+            fetchOrders();
+            moneyDisbursed();
+        }
+    }, [ currentMonth, formSuccess ]);
+
+    useEffect(() => {
+        if(error_str) {
+            alert(error_str);
+            setErrorStr("");
+        }
+    }, [ error_str ]);
+
+    const fetchOrders = async () => {
+        const data = await fetch(
+            `https://api.thebostoncravings.com/order/getOrdersByAmbassadorIdAndByMonth/`,
+            {
+                method: "POST",
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem("token")}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ambassadorId: `${JSON.parse(localStorage.getItem("data"))._id}`,
+                    month: `${currentMonth}`
+                })
+            },
+        );
+        const response = await data.json();
+        if(data.status && response) {
+            setOrders(response.groupedOrders);
+            setPlacedOrderCount(response.totalOrder);
+            setAccumulatedCommission(response.eightPercentValue);
+            let total_value = 0;
+            response.groupedOrders.map((v) => {
+                total_value += v.totalPaid;
+            });
+            setTotalOrderValue(total_value);
+        }
+    };
+
+    const moneyDisbursed = async () => {
+        const data = await fetch(
+            `https://api.thebostoncravings.com/amountSent/getamountSentsByAmbassadorIdAndByMonth/`,
+            {
+                method: "POST",
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem("token")}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ambassadorId: `${JSON.parse(localStorage.getItem("data"))._id}`,
+                    monthOfPayment: `${currentMonth}`
+                })
+            },
+        );
+        const response = await data.json();
+        console.log(response)
+        if(data.status && response.message) {
+            setMoneyDistributeText(response.message.slice(0, response.message.length - 2) + " " + months[parseInt(response.monthOfPayment)])
+        }else {
+            setMoneyDistributeText("Money will be disbursed in the first week of"+ " " + months[parseInt(currentMonth) + 1])
+        }
+    };
+
+
     return (
         <>
             <Header />
@@ -280,6 +259,7 @@ export default function Dashboard() {
                     <div className={Style.cards}>
                         <div
                             onClick={(e) => {
+                                setPreviousCard(card);
                                 setCard("first");
                             }}
                             id="first"
@@ -295,6 +275,7 @@ export default function Dashboard() {
                         </div>
                         <div
                             onClick={(e) => {
+                                setPreviousCard(card);
                                 setCard("second");
                             }}
                             id="second"
@@ -307,6 +288,7 @@ export default function Dashboard() {
                         </div>
                         <div
                             onClick={(e) => {
+                                setPreviousCard(card);
                                 setCard("third");
                             }}
                             id="third"
@@ -763,18 +745,18 @@ export default function Dashboard() {
                                         <tr>
                                             <th>Street Address</th>
                                             <th>Places</th>
-                                            <th>Date & time</th>
+                                            {/* <th>Date & time</th> */}
                                             <th>Order placed</th>
                                             <th>Order value</th>
                                         </tr>
                                         {orders.map((v, i) => {
                                             return (
                                                 <tr key={i}>
-                                                    <td>{v.street_address}</td>
-                                                    <td>{v.places}</td>
-                                                    <td>{v.date_time}</td>
-                                                    <td>{v.order_placed}</td>
-                                                    <td>{v.order_value}</td>
+                                                    <td>{v._id.address}</td>
+                                                    <td>{v._id.city}</td>
+                                                    {/* <td>{v._id.date_time}</td> */}
+                                                    <td>{v.totalOrders.toString().padStart(2, '0')}</td>
+                                                    <td>{v.totalPaid}</td>
                                                 </tr>
                                             );
                                         })}
@@ -817,7 +799,7 @@ export default function Dashboard() {
                         <>
                             <div className={Style.dashboard_total}>
                                 <h3>
-                                    Total order value <span>$ 500</span>
+                                    Total order value <span>$ {totla_order_value}</span>
                                 </h3>
                             </div>
                         </>
@@ -834,7 +816,7 @@ export default function Dashboard() {
                                 onClick={(e) => {
                                     e.preventDefault();
                                     // document.querySelector('#popup').style.display = 'none';
-                                    setCard("first");
+                                    setCard(previousCard);
                                 }}
                             >
                                 <svg
@@ -853,8 +835,7 @@ export default function Dashboard() {
                         </div>
                         <div className={Style.popup_card_body}>
                             <h2>
-                                Money will be disbursed in the first week of{" "}
-                                {months[parseInt(currentMonth) + 1]}
+                                {money_destribute_text}
                             </h2>
                         </div>
                     </div>

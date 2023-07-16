@@ -66,6 +66,10 @@
     color: #000;
 }
 
+.add_button:hover {
+    background: #2cbed4;
+}
+
 .left_dashboard_panel {
     display: flex;
     align-items: center;
@@ -192,6 +196,7 @@
     background: white;
     display: none;
     border-radius: 0.5rem;
+    z-index: 5;
 }
 
 .colender_popup_head {
@@ -326,6 +331,10 @@
     margin-top: 3rem;
 }
 
+.primary_button_field:hover {
+    background: #2cbed4;
+}
+
 .primary_button_field span {
     margin-left: 0.5rem;
 }
@@ -456,20 +465,6 @@
     }
 
     .table td:nth-child(3):before {
-        background: url("/tabler-icon-calendar-event.svg");
-        content: '';
-        width: 1rem;
-        height: 1rem;
-        margin-right: 0.6rem;
-        margin-top: 0.3rem;
-        display: flex;
-        background-repeat: no-repeat;
-        background-size: contain;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .table td:nth-child(4):before {
         background: url("/tabler-icon-flame.svg");
         content: '';
         width: 1rem;
@@ -483,7 +478,7 @@
         align-items: center;
     }
 
-    .table td:nth-child(5):before {
+    .table td:nth-child(4):before {
         background: url("/");
         content: '$';
         width: 1rem;
@@ -503,10 +498,6 @@
     }
 
     .table td:nth-child(3) {
-        color: var(--secondry-text-color);
-    }
-
-    .table td:nth-child(4) {
         color: var(--secondry-text-color);
     }
 
