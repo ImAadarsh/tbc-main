@@ -47,8 +47,8 @@ export default function Dashboard() {
     const [zip_value, setZipValue] = useState("");
     const [dish_value, setDishValue] = useState("apple_pie");
     const [stick_value, setStickValue] = useState(true);
-
     const [ address_suggestions, setAddressSuggestions ] = useState([]);
+    const [extraSuggestions, setExtraSuggestions] = useState({});
 
     const addToDatabase = async () => {
         if (
@@ -172,11 +172,29 @@ export default function Dashboard() {
                 }
             );
             const data = await res.json();
-            const all_suggestions = [];
-            for(let i = 0; i < data.predictions.length; i++) {
-                all_suggestions.push(data.predictions[i].description);
-            }
-            setAddressSuggestions(all_suggestions);
+            setAddressSuggestions(data);
+        }
+    }
+
+    const addressExtraSuggestion = async (place_id) => {
+        if(place_id.length >= 5) {
+            const res = await fetch(
+                `https://api.thebostoncravings.com/get-place-details`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        authorization: `Bearer ${localStorage.getItem("token")}`
+                    },
+                    body: JSON.stringify({
+                        placeId: place_id
+                    })
+                }
+            );
+            const data = await res.json();
+            setCityValue(data.city);
+            setStateValue(data.state);
+            setZipValue(data.zip);
         }
     }
 
@@ -197,6 +215,12 @@ export default function Dashboard() {
             setErrorStr("");
         }
     }, [ error_str ]);
+
+    useEffect(() => {
+        if(extraSuggestions.description && extraSuggestions.place_id) {
+            addressExtraSuggestion(extraSuggestions.place_id);
+        }
+    }, [extraSuggestions]);
 
     const fetchOrders = async () => {
         const data = await fetch(
@@ -520,9 +544,10 @@ export default function Dashboard() {
                                                         return (
                                                             <div key={i} className={Style.suggestion_item}>
                                                                 <p onClick={(e) => {
-                                                                    setAddressValue(v);
+                                                                    setExtraSuggestions(v);
+                                                                    setAddressValue(v.description);
                                                                     setAddressSuggestions([]);
-                                                                }} >{v}</p>
+                                                                }} >{v.description}</p>
                                                             </div>
                                                         )
                                                     })}

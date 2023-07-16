@@ -533,3 +533,25 @@
         bottom: 3rem;
     }
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .left {
+        height: 80vh;
+        overflow: auto;
+        width: 30%;
+        position: sticky;
+        top: 7rem;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 2100px) {
+    .left {
+        height: 80vh;
+        overflow: auto;
+        width: 19%;
+        position: sticky;
+        top: 7rem;
+        left: 0;
+    }
+}
