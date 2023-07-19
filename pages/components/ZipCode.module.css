@@ -1,0 +1,35 @@
+.zipCode {
+    display: flex;
+    width: fit-content;
+    height: 2rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    align-items: center;
+    border-radius: 0.8rem;
+    background: var(--colors-gray-f-5-f-5-f-5100, #F5F5F5);
+}
+
+.zipCode input {
+    color: black;
+    font-family: Noto Sans;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    width: 10rem;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.zipCode button {
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 0.6rem;
+    background: var(--colors-primary-100, #32E0FB);
+}

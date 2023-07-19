@@ -99,8 +99,7 @@ export default function Header() {
                     </button>
                 </div>
                 <div onClick={(e) => {
-                    document.querySelector("#crausla_bar").style.display =
-                        "flex";
+                    document.querySelector("#crausla_bar").style.display = "flex";
                 }} className={Style.hamebargar}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +132,7 @@ export default function Header() {
                             className={Style.logo}
                         />
                         <div onClick={(e) => {
-                            document.querySelector("#crausla_bar").style.display =
-                                "none";
+                            document.querySelector("#crausla_bar").style.display = "none";
                         }} className={Style.top_cross}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

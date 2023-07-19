@@ -1,0 +1,90 @@
+.hero {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 5rem;
+    row-gap: 1.5rem;
+}
+
+.hero_left h1 {
+    color: var(--colors-dark-000000100, #000);
+    font-family: Expletus Sans;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.75rem;
+}
+
+.hero_left h1 span {
+    color: var(--colors-primary-100, #32E0FB);
+    font-family: Expletus Sans;
+    font-size: 2.8rem;
+    font-style: normal;
+}
+
+.hero_left p {
+    font-family: Expletus Sans;
+    font-size: 1.5rem;
+    font-style: normal;
+}
+
+.hero_left p span {
+    background: linear-gradient(90deg, #65D5E7 0%, #0487FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero_right {
+    display: flex;
+    flex-direction: column;
+}
+
+.plates_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #76EAFC;
+    clip-path: circle(71.4% at 64% -11%);
+}
+
+.plate_rope {
+    margin-top: 5rem;
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='50%' ry='50%' stroke='%23333' stroke-width='4' stroke-dasharray='18' stroke-dashoffset='45' stroke-linecap='round'/%3e%3c/svg%3e");
+    border-radius: 100px;
+}
+
+.plate_scrole_arrows {
+    margin-left: 5rem;
+    margin-right: 7rem;
+    margin-top: -12rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.plate_scrole_arrow svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.plate_scrole_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #76EAFC;
+    padding: 0.5rem;
+}
