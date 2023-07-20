@@ -4,7 +4,7 @@ export default function ZipCode(props) {
     return (
         <div className={Style.zipCode}>
             <input placeholder={props.placeholder} type="text" name="zipcode" id="zipcode" />
-            <button>Get started</button>
+            <button className='button_main'>Get started</button>
         </div>
     );
 }

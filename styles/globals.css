@@ -157,6 +157,31 @@ body {
     column-gap: 0.6rem;
 }
 
+.button_main:hover {
+    background: #2cbed4;
+}
+
+.button_second {
+    font-family: Noto Sans;
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+    display: flex;
+    padding: 1rem 4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 1.25rem;
+    background: var(--colors-primary-10, rgba(50, 224, 251, 0.10));
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+}
+
+.button_second:hover {
+    background: #2cbed4;
+}
+
 .button_logo {
     display: flex;
     align-items: center;
@@ -208,4 +233,24 @@ body {
 .dish_g {
     width: 18rem;
     transform: translateX(-110px) translateY(0px);
+}
+
+.dot {
+    height: 0.5rem !important;
+    border-radius: 62.4375rem !important;
+    background: var(--colors-primary-100, #32E0FB) !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+}
+
+.selected {
+    width: 2.5rem !important;
+}
+
+.carousel-status {
+    display: none;
+}
+
+.control-dots {
+    left: -9.5rem !important;
 }

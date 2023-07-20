@@ -1,0 +1,16 @@
+.mid_zip_row {
+    margin-top: 2rem;
+    display: flex;
+    padding: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1 0 0;
+    background: var(--colors-primary-100, #32E0FB);
+}
+
+.mid_zip_row h1 {
+    font-family: Expletus Sans;
+    font-size: 1.9rem;
+}
