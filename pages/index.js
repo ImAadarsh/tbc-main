@@ -335,7 +335,7 @@ export default function Index() {
                                     fill="#FF1569"
                                     stroke="#32E0FB"
                                     strokeWidth="0.844623"
-                                    strokeMterlimit="10"
+                                    strokemterlimit="10"
                                 />
                                 <path
                                     fillRule="evenodd"
@@ -373,7 +373,7 @@ export default function Index() {
                                     fill="#FF1569"
                                     stroke="#32E0FB"
                                     strokeWidth="0.844623"
-                                    strokeMterlimit="10"
+                                    strokemterlimit="10"
                                 />
                                 <path
                                     fillRule="evenodd"
