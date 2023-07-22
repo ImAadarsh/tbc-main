@@ -305,3 +305,76 @@
     background: var(--colors-primary-100, #32E0FB);
     cursor: pointer;
 } */
+
+.locations {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: var(--colors-text-light-f-7-fafc-100, #F7FAFC);
+    margin: 5rem;
+    padding: 5rem;
+}
+
+.locations_left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 40%;
+}
+
+.locations_left h1 {
+    font-family: Expletus Sans;
+    font-size: 3rem;
+}
+
+.locations_right {
+    margin-left: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .hero {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .hero_left {
+        text-align: center;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .categories_top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        grid-gap: 2rem;
+    }
+
+    .categories_mid {
+        padding: 0 0;
+    }
+
+    .categories_mid_items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .how_it_work_cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .locations_right img {
+        width: 10rem;
+    }
+
+    .locations {
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .locations_left h1 {
+        font-size: 1.5rem;
+    }
+}

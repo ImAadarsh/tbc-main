@@ -5,6 +5,7 @@ import ItemCard from "./components/ItemCard";
 import MidZipRow from "./components/MidZipRow";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 var Carousel = require('react-responsive-carousel').Carousel;
+import Footer from "./components/Footer";
 
 export default function Index() {
     const [ cardCount, setCardCount ] = useState(1);
@@ -240,7 +241,7 @@ export default function Index() {
                         </button>
                     </div>
                 </div>
-                <div className={Style.how_it_work}>
+                <div id="how_it_work" className={Style.how_it_work}>
                     <div className={Style.how_it_work_top}>
                         <h1>How it works</h1>
                     </div>
@@ -394,7 +395,7 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
-                <div className={Style.zip_codes_row}>
+                <div id="login" className={Style.zip_codes_row}>
                     <MidZipRow />
                 </div>
                 <div className={Style.customer_cards}>
@@ -489,6 +490,16 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
+                <div className={Style.locations}>
+                    <div className={Style.locations_left}>
+                        <h1>Places we serve in Boston</h1>
+                        <p>*we are constantly expanding in the New England region and south towards <b>New York</b></p>
+                    </div>
+                    <div className={Style.locations_right}>
+                        <img src="/locations.svg"/>
+                    </div>
+                </div>
+                <Footer/>
             </div>
         </>
     );

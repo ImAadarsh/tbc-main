@@ -88,7 +88,7 @@ export default function ItemCard(props) {
                         </div>
                     </div>
                     <button
-                        onClick={props.addCardButton()}
+                        onClick={props.addCardButton}
                         className={`button_main ${Style.categories_mid_item_bottom_add}`}
                     >
                         Add
