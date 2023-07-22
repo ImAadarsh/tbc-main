@@ -256,3 +256,9 @@ body {
 .control-dots {
     left: -9.5rem !important;
 }
+
+@media screen and (max-width: 1000px) {
+    .control-dots {
+        left: auto !important;
+    }
+}

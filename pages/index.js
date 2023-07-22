@@ -131,6 +131,7 @@ export default function Index() {
                     </div>
                 </div>
                 <div className={Style.categories}>
+                    <h1>Craving categories</h1>
                     <div className={Style.categories_top}>
                         <div
                             className={`${Style.categorys} ${Style.categories_select}`}

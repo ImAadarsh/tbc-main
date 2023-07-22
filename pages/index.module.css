@@ -21,7 +21,6 @@
     font-size: 2.8rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 3.75rem;
 }
 
 .hero_left h1 span {
@@ -32,9 +31,9 @@
 }
 
 .hero_left p {
-    font-family: Expletus Sans;
     font-size: 1.5rem;
     font-style: normal;
+    font-weight: 500;
 }
 
 .hero_left p span {
@@ -112,6 +111,15 @@
 
 .categories {
     margin-top: 8rem;
+}
+
+.categories h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--colors-dark-000000100, #000);
+    font-family: Expletus Sans;
+    font-size: 2.8rem;
+    font-weight: 700;
 }
 
 .categories_top {
@@ -343,6 +351,40 @@
         text-align: center;
         align-items: center;
         margin-left: 0;
+        margin-top: 1.5rem;
+        padding: 0 1.72rem;
+        row-gap: 1rem;
+    }
+
+    .hero_left h1 {
+        font-size: 1.5rem;
+        order: 2;
+    }
+
+    .hero_left h1 span {
+        font-size: 1.5rem;
+    }
+
+    .hero_left p {
+        font-size: 1rem;
+        order: 3;
+        font-weight: 400;
+    }
+
+    .zipCode {
+        order: 1;
+    }
+
+    .plate_scrole_arrows {
+        display: none;
+    }
+
+    .plate_rope {
+        width: 22rem;
+    }
+
+    .categories {
+        margin-top: 3rem;
     }
 
     .categories_top {
@@ -369,12 +411,84 @@
     }
 
     .locations {
-        margin: 0;
-        padding: 0;
+        margin: 1rem;
+        padding: 2rem 1.5rem;
         flex-direction: column;
     }
 
     .locations_left h1 {
         font-size: 1.5rem;
+    }
+
+    .how_it_work_cards {
+        padding: 2rem 0rem;
+    }
+
+    .customer_cards {
+        padding: 1rem;
+    }
+
+    .customer_card {
+        flex-direction: column;
+    }
+
+    .customer_card_left {
+        margin-left: 0;
+    }
+
+    .customer_card_left_top {
+        margin-bottom: 2.5rem;
+    }
+
+    .how_it_work {
+        margin-top: 3rem;
+    }
+
+    .categories_bottom {
+        margin-top: 2rem;
+    }
+
+    .categories_mid_items {
+        row-gap: 2rem;
+    }
+
+    .categories_mid h2 {
+        font-size: 1.6rem;
+    }
+
+    .categories_top {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .categories h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .how_it_work h1 {
+        font-size: 1.6rem;
+    }
+
+    .how_it_work_cards {
+        row-gap: 2rem;
+    }
+
+    .how_it_work_card {
+        width: 65%;
+    }
+
+    .locations_left {
+        width: 100%;
+    }
+
+    .locations_right {
+        margin: 0;
+    }
+
+    .locations_right img {
+        margin-top: 1.5rem;
+        width: 100%;
     }
 }

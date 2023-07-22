@@ -67,6 +67,10 @@
 }
 
 @media screen and (max-width: 1000px) {
+    .aleart_line {
+        padding: 0.5rem 1rem;
+        content: "aa";
+    }
     .header {
         padding: 1rem 1rem;
     }

@@ -14,3 +14,13 @@
     font-family: Expletus Sans;
     font-size: 1.9rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .mid_zip_row {
+        padding: 2rem 1.5rem;
+    }
+
+    .mid_zip_row h1 {
+        font-size: 1.6rem;
+    }
+}

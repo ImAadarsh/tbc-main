@@ -102,3 +102,19 @@
     color: #545454;
     margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .footer {
+        padding: 2rem;
+        margin-top: 4rem;
+    }
+    .footer_top {
+        row-gap: 1rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer_bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}

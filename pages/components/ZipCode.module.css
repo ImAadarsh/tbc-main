@@ -33,3 +33,14 @@
     border-radius: 0.6rem;
     background: var(--colors-primary-100, #32E0FB);
 }
+
+@media screen and (max-width: 1000px) {
+    .zipCode {
+        padding: 0.8rem 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .zipCode button {
+        padding: 0.3rem 1.5rem;
+    }
+}
