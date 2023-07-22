@@ -54,6 +54,7 @@
     justify-content: center;
     background: #76EAFC;
     clip-path: circle(71.4% at 64% -11%);
+    transition: all 1s linear;
 }
 
 .plate_rope {

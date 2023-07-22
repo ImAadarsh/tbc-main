@@ -7,47 +7,53 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 var Carousel = require('react-responsive-carousel').Carousel;
 import Footer from "./components/Footer";
 
+const platesItems = [
+    {
+        id: "a",
+        idx: 1,
+        degs: 65
+    },
+    {
+        id: "b",
+        idx: 2,
+        degs: 120
+    },
+    {
+        id: "c",
+        idx: 3,
+        degs: 180
+    },
+    {
+        id: "d",
+        idx: 4,
+        degs: 240
+    },
+    {
+        id: "e",
+        idx: 5,
+        degs: 300
+    },
+    {
+        id: "f",
+        idx: 6,
+        degs: 360
+    },
+    {
+        id: "g",
+        idx: 7,
+        degs: 420
+    },
+];
+
 export default function Index() {
-    const [ cardCount, setCardCount ] = useState(1);
-    const [platePosition, setPlatePosition] = useState(1);
-    const [platesItems, setPlatesItems] = useState([
-        {
-            id: "a",
-            idx: 1,
-        },
-        {
-            id: "b",
-            idx: 2,
-        },
-        {
-            id: "c",
-            idx: 3,
-        },
-        {
-            id: "d",
-            idx: 4,
-        },
-        {
-            id: "e",
-            idx: 5,
-        },
-        {
-            id: "f",
-            idx: 6,
-        },
-        {
-            id: "g",
-            idx: 7,
-        },
-    ]);
+    const [platePosition, setPlatePosition] = useState(7);
 
     const chnageOrder = (n) => {
-        let newPlatesItems = [...platesItems];
-        let old_idx = newPlatesItems[n % 6].idx;
-        let new_idx = newPlatesItems[6].idx;
-        newPlatesItems[n % 6].idx = new_idx;
-        newPlatesItems[6].idx = old_idx;
-        setPlatesItems(newPlatesItems);
+        let id = (n % 7);
+        const rope = document.querySelector("#plate_rope");
+        rope.style = `rotate: ${platesItems[id].degs}deg`;
+
+        document.querySelector(`.dish_g`).src = `./dish_${platesItems[id].idx}.svg`;
     };
 
     return (
@@ -60,14 +66,14 @@ export default function Index() {
                             Bostonian
                         </h1>
                         <p>
-                            <span>Steal our kitchen.</span> Everything for $ 5
+                            <span>Steal our kitchen.</span> Everything for $5
                             *Good news: rate includes taxes unlike other apps
                         </p>
                         <ZipCode placeholder={"Enter Zip code"} />
                     </div>
                     <div className={Style.hero_right}>
                         <div className={Style.plates_container}>
-                            <div className={Style.plate_rope}>
+                            <div id="plate_rope" className={Style.plate_rope}>
                                 {platesItems.map((plate, index) => {
                                     return (
                                         <img
