@@ -56,6 +56,20 @@ export default function Index() {
         document.querySelector(`.dish_g`).src = `./dish_${platesItems[id].idx}.svg`;
     };
 
+    useEffect(() => {
+        if(document.querySelector("body").clientWidth <= 1000) {
+            setInterval(() => {
+                chnageOrder(platePosition);
+                setPlatePosition(platePosition + 1);
+            }, 3000);
+        }
+    }, [ platePosition ]);
+
+    useEffect(() => {
+        const alert_bar = document.querySelector("#aleart_line_text");
+        alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
+    }, []);
+
     return (
         <>
             <div className={Style.main}>

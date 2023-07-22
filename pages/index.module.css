@@ -492,4 +492,20 @@
         margin-top: 1.5rem;
         width: 100%;
     }
+
+    .plate_rope {
+        width: 23rem;
+        height: 23rem;
+        clip-path: none !important;
+    }
+
+    .hero_right {
+        width: 100%;
+        height: 18rem;
+        overflow: hidden;
+    }
+
+    .plates_container {
+        clip-path: circle(50% at 50% 18%)
+    }
 }

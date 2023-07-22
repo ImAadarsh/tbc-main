@@ -261,4 +261,39 @@ body {
     .control-dots {
         left: auto !important;
     }
+
+    .dish_a {
+        width: 6rem;
+        transform: translateX(-28px) translateY(45px);
+    }
+    
+    .dish_b {
+        width: 6rem;
+        transform: translateX(40px) translateY(-50px);
+    }
+    
+    .dish_c {
+        width: 6rem;
+        transform: translateX(95px) translateY(53px);
+    }
+    
+    .dish_d {
+        width: 6rem;
+        transform: translateX(285px) translateY(130px);
+    }
+    
+    .dish_e {
+        width: 6rem;
+        transform: translateX(40px) translateY(210px);
+    }
+    
+    .dish_f {
+        width: 6rem;
+        transform: translateX(-214px) translateY(115px);
+    }
+    
+    .dish_g {
+        width: 10rem;
+        transform: translateX(110px) translateY(-105px);
+    }
 }
