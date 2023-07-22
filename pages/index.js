@@ -11,37 +11,44 @@ const platesItems = [
     {
         id: "a",
         idx: 1,
-        degs: 65
+        degs: 65,
+        background: "#76EAFC"
     },
     {
         id: "b",
         idx: 2,
-        degs: 120
+        degs: 120,
+        background: "#2ECCE4"
     },
     {
         id: "c",
         idx: 3,
-        degs: 180
+        degs: 180,
+        background: "#A8B2FF"
     },
     {
         id: "d",
         idx: 4,
-        degs: 240
+        degs: 240,
+        background: "#4D59DB"
     },
     {
         id: "e",
         idx: 5,
-        degs: 300
+        degs: 300,
+        background: "#76EAFC"
     },
     {
         id: "f",
         idx: 6,
-        degs: 360
+        degs: 360,
+        background: "#2ECCE4"
     },
     {
         id: "g",
         idx: 7,
-        degs: 420
+        degs: 420,
+        background: "#A8B2FF"
     },
 ];
 
@@ -54,6 +61,11 @@ export default function Index() {
         rope.style = `rotate: ${platesItems[id].degs}deg`;
 
         document.querySelector(`.dish_g`).src = `./dish_${platesItems[id].idx}.svg`;
+        document.querySelector("#plates_container").style.background = platesItems[id].background;
+        document.querySelector("#arrow_left").style.background = platesItems[id].background;
+        document.querySelector("#arrow_right").style.background = platesItems[id].background;
+        document.querySelector("#carvings").style.color = platesItems[id].background;
+        document.querySelector("#kitchen").style.color = platesItems[id].background;
     };
 
     useEffect(() => {
@@ -66,8 +78,10 @@ export default function Index() {
     }, [ platePosition ]);
 
     useEffect(() => {
-        const alert_bar = document.querySelector("#aleart_line_text");
-        alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
+        if(document.querySelector("body").clientWidth <= 1000) {
+            const alert_bar = document.querySelector("#aleart_line_text");
+            alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
+        }
     }, []);
 
     return (
@@ -76,17 +90,17 @@ export default function Index() {
                 <div className={Style.hero}>
                     <div className={Style.hero_left}>
                         <h1>
-                            Chef-crafted <span>cravings</span> for every
+                            Chef-crafted <span id="carvings">cravings</span> for every
                             Bostonian
                         </h1>
                         <p>
-                            <span>Steal our kitchen.</span> Everything for $5
+                            <span id="kitchen">Steal our kitchen.</span> Everything for $5
                             *Good news: rate includes taxes unlike other apps
                         </p>
                         <ZipCode placeholder={"Enter Zip code"} />
                     </div>
                     <div className={Style.hero_right}>
-                        <div className={Style.plates_container}>
+                        <div id="plates_container" className={Style.plates_container}>
                             <div id="plate_rope" className={Style.plate_rope}>
                                 {platesItems.map((plate, index) => {
                                     return (
@@ -102,6 +116,7 @@ export default function Index() {
                         </div>
                         <div className={Style.plate_scrole_arrows}>
                             <div
+                                id="arrow_left"
                                 className={Style.plate_scrole_arrow}
                                 onClick={() => {
                                     chnageOrder(platePosition);
@@ -125,6 +140,7 @@ export default function Index() {
                                 </svg>
                             </div>
                             <div
+                                id="arrow_right"
                                 className={Style.plate_scrole_arrow}
                                 onClick={() => {
                                     chnageOrder(platePosition);
