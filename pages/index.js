@@ -398,7 +398,7 @@ export default function Index() {
                     <MidZipRow />
                 </div>
                 <div className={Style.customer_cards}>
-                    <Carousel>
+                    <Carousel showThumbs={false}>
                         <div id={"card_1"} className={Style.customer_card}>
                             <div className={Style.customer_card_right}>
                                 <img src="./ellipes.svg" alt="eliips" />
@@ -416,30 +416,6 @@ export default function Index() {
                                         highly recommend TBC to you”.
                                     </p>
                                     <h4>Theresa Jordan</h4>
-                                </div>
-                                <div
-                                    className={
-                                        Style.customer_card_left_bottom_dots
-                                    }
-                                >
-                                    <div
-                                        style={{ width: "2.5rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                    <div
-                                        style={{ width: "0.6rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                    <div
-                                        style={{ width: "0.6rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
                                 </div>
                             </div>
                         </div>
@@ -461,30 +437,6 @@ export default function Index() {
                                     </p>
                                     <h4>Theresa Jordan</h4>
                                 </div>
-                                <div
-                                    className={
-                                        Style.customer_card_left_bottom_dots
-                                    }
-                                >
-                                    <div
-                                        style={{ width: "0.6rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                    <div
-                                        style={{ width: "2.5rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                    <div
-                                        style={{ width: "0.6rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                </div>
                             </div>
                         </div>
                         <div id={"card_3"} className={Style.customer_card}>
@@ -504,30 +456,6 @@ export default function Index() {
                                         highly recommend TBC to you”.
                                     </p>
                                     <h4>Theresa Jordan</h4>
-                                </div>
-                                <div
-                                    className={
-                                        Style.customer_card_left_bottom_dots
-                                    }
-                                >
-                                    <div
-                                        style={{ width: "0.6rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                    <div
-                                        style={{ width: "0.6rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
-                                    <div
-                                        style={{ width: "2.5rem" }}
-                                        className={
-                                            Style.customer_card_left_bottom
-                                        }
-                                    ></div>
                                 </div>
                             </div>
                         </div>
