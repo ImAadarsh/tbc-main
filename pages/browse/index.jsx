@@ -1,13 +1,23 @@
 import Style from "./index.module.css";
 import ItemCard from "../components/ItemCard";
+import SpacePopup from "../components/SpacePopup";
+import { useState } from "react";
+import { Accordion, AccordionItem } from "@szhsin/react-accordion";
 
 export default function Items() {
+    const [filterShow, setFilterShow] = useState(false);
+
     return (
         <>
             <div className={Style.Items_Container}>
                 <div className={Style.items_categoryes_top}>
                     <div className={Style.items_filter}>
-                        <div className={Style.items_filter_left}>
+                        <div
+                            onClick={() => {
+                                setFilterShow(!filterShow);
+                            }}
+                            className={Style.items_filter_left}
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="20"
@@ -23,9 +33,47 @@ export default function Items() {
                                 />
                             </svg>
                         </div>
-                        <div className={Style.items_filter_right}>
+                        <div
+                            onClick={() => {
+                                setFilterShow(!filterShow);
+                            }}
+                            className={Style.items_filter_right}
+                        >
                             <h4>Filters</h4>
                         </div>
+                        <SpacePopup
+                            title={"Filters"}
+                            show={filterShow}
+                            item={
+                                <div className={Style.FilterOptions}>
+                                    <div className={Style.FilterOptions_head}>
+                                        <h3>Dietary Preferences</h3>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
+                                                d="M19.6653 16.6653C19.219 17.1116 18.4953 17.1116 18.049 16.6653L12 10.6162L5.95098 16.6653C5.50467 17.1116 4.78105 17.1116 4.33473 16.6653C3.88842 16.219 3.88842 15.4953 4.33473 15.049L11.1919 8.19188C11.6382 7.74556 12.3618 7.74556 12.8081 8.19188L19.6653 15.049C20.1116 15.4953 20.1116 16.219 19.6653 16.6653Z"
+                                                fill="#545454"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div
+                                        className={Style.FilterOptions_body}
+                                    >
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="field" id="fields" />
+                                            <p>Low Sodium</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        />
                     </div>
                     <div className={Style.categories_top}>
                         <div
@@ -182,7 +230,7 @@ export default function Items() {
                     <div id="morning" className={Style.items_cards}>
                         <div className={Style.items_head}>
                             <div className={Style.item_head_state_logo}>
-                            <svg
+                                <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="32"
                                     height="32"
@@ -198,7 +246,7 @@ export default function Items() {
                             <h1>Morning</h1>
                         </div>
                         <div className={Style.items_cards_sections}>
-                        <ItemCard
+                            <ItemCard
                                 image={"../dish_item.svg"}
                                 name={"Blueberry Pancakes"}
                                 price={"$5"}

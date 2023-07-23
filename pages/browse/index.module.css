@@ -131,6 +131,44 @@
     margin: auto;
 }
 
+.FilterOptions {
+    display: flex;
+    width: 100%;
+}
+
+.FilterOptions_head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.filterFields input[type="checkbox"]::before {
+    position: relative;
+  display: block;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #808080;
+  content: "";
+  background: #FFF;
+}
+
+.filterFields input[type="checkbox"]::after {
+    position: relative;
+  display: block;
+  left: 2px;
+  top: -11px;
+  width: 7px;
+  height: 7px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #B3B3B3 #dcddde #dcddde #B3B3B3;
+  content: "";
+  background-image: linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @media screen and (max-width: 1000px) {
     .categories_top {
         grid-gap: 1rem;

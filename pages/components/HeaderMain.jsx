@@ -4,17 +4,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function Header() {
-    const [userData, setUserData] = useState({});
     const [ selectRoute, setSelectRoute ] = useState("")
     const router = useRouter();
-
-    const logout = () => {
-        if (localStorage.getItem("token")) {
-            localStorage.removeItem("token");
-            localStorage.removeItem("data");
-            router.push("/ambassadors");
-        }
-    };
 
     useEffect(() => {
         setSelectRoute(router.pathname);
