@@ -5,7 +5,6 @@ import ItemCard from "./components/ItemCard";
 import MidZipRow from "./components/MidZipRow";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 var Carousel = require('react-responsive-carousel').Carousel;
-import Footer from "./components/Footer";
 
 const platesItems = [
     {
@@ -76,13 +75,6 @@ export default function Index() {
             }, 3000);
         }
     }, [ platePosition ]);
-
-    useEffect(() => {
-        if(document.querySelector("body").clientWidth <= 1000) {
-            const alert_bar = document.querySelector("#aleart_line_text");
-            alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
-        }
-    }, []);
 
     return (
         <>
@@ -536,7 +528,6 @@ export default function Index() {
                         <img src="/locations.svg"/>
                     </div>
                 </div>
-                <Footer/>
             </div>
         </>
     );

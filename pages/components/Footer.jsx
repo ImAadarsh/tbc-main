@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className={Style.footer_top}>
                     <div className={Style.footer_top_sections}>
                         <Image
-                            src={"./logo_widht_high.svg"}
+                            src={"/logo_widht_high.svg"}
                             width={260}
                             height={50}
                             alt={"logo"}

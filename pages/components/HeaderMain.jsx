@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function Header() {
     const [userData, setUserData] = useState({});
+    const [ selectRoute, setSelectRoute ] = useState("")
     const router = useRouter();
 
     const logout = () => {
@@ -16,11 +17,14 @@ export default function Header() {
     };
 
     useEffect(() => {
-        // if(!localStorage.getItem('token')) {
-        //     router.push('/ambassadors');
-        // }else {
-        //     setUserData(JSON.parse(localStorage.getItem('data')));
-        // }
+        setSelectRoute(router.pathname);
+    }, [ router.pathname ]);
+
+    useEffect(() => {
+        if(document.querySelector("body").clientWidth <= 1000) {
+            const alert_bar = document.querySelector("#aleart_line_text");
+            alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
+        }
     }, []);
 
     return (
@@ -66,13 +70,27 @@ export default function Header() {
                 <div className={Style.mid}>
                     <ul>
                         <li>
-                            <Link href={"/"}>Browse Cravings</Link>
+                            <Link style={{ 
+                                background: selectRoute.includes("/browse") ? "rgba(50, 224, 251, 0.15)" : "none", 
+                                padding: selectRoute.includes("/browse") ? "0.5rem 1rem" : "none",
+                                borderRadius: selectRoute.includes("/browse") ? "12px" : "none"
+                            }}
+                                href={"/browse"}
+                            >Browse Cravings</Link>
                         </li>
                         <li>
-                            <Link href={"/"}>How it works</Link>
+                            <Link style={{ 
+                                background: selectRoute.includes("/how-it-works") ? "rgba(50, 224, 251, 0.15)" : "none", 
+                                padding: selectRoute.includes("/how-it-works") ? "0.5rem 1rem" : "none",
+                                borderRadius: selectRoute.includes("/how-it-works") ? "12px" : "none"
+                            }} href={"/how-it-works"}>How it works</Link>
                         </li>
                         <li>
-                            <Link href={"/"}>FAQ</Link>
+                            <Link style={{ 
+                                background: selectRoute.includes("/faq") ? "rgba(50, 224, 251, 0.15)" : "none", 
+                                padding: selectRoute.includes("/faq") ? "0.5rem 1rem" : "none",
+                                borderRadius: selectRoute.includes("/faq") ? "12px" : "none"
+                            }} href={"/faq"}>FAQ</Link>
                         </li>
                     </ul>
                 </div>
