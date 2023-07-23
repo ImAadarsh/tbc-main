@@ -65,6 +65,11 @@ export default function Index() {
         document.querySelector("#arrow_right").style.background = platesItems[id].background;
         document.querySelector("#carvings").style.color = platesItems[id].background;
         document.querySelector("#kitchen").style.color = platesItems[id].background;
+
+        setTimeout(() => {
+            document.querySelector(".dish_g").style = "transform: translateX(-118px) translateY(0px) scale(1);"
+        }, 150);
+        document.querySelector(".dish_g").style = "transform: translateX(-118px) translateY(0px) scale(0);"
     };
 
     useEffect(() => {
