@@ -108,6 +108,8 @@
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
     grid-gap: 1rem;
+    width: fit-content;
+    margin: auto;
 }
 
 .categories {
@@ -209,6 +211,9 @@
     justify-content: center;
     align-items: flex-start;
     padding: 3rem 12rem;
+    width: fit-content;
+    grid-gap: 5rem;
+    margin: auto;
 }
 
 .how_it_work_card {

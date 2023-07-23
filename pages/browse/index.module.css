@@ -125,8 +125,10 @@
 .items_cards_sections {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
     place-items: center;
+    grid-gap: 1rem;
+    width: fit-content;
+    margin: auto;
 }
 
 @media screen and (max-width: 1000px) {

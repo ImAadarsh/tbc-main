@@ -236,6 +236,7 @@ export default function Index() {
                         <h2>Craving’s master top pick</h2>
                         <div className={Style.categories_mid_items}>
                             <ItemCard
+                                id={"1"}
                                 image={"./dish_item.svg"}
                                 name={"Blueberry Pancakes"}
                                 price={"$5"}
@@ -245,6 +246,7 @@ export default function Index() {
                                 addCardButton={() => {}}
                             />
                             <ItemCard
+                                id={"2"}
                                 image={"./dish_item.svg"}
                                 name={"Blueberry Pancakes"}
                                 price={"$5"}
@@ -254,6 +256,7 @@ export default function Index() {
                                 addCardButton={() => {}}
                             />
                             <ItemCard
+                                id={"3"}
                                 image={"./dish_item.svg"}
                                 name={"Blueberry Pancakes"}
                                 price={"$5"}
