@@ -62,6 +62,9 @@ export default function Header() {
             <header className={Style.header}>
                 <div className={Style.left}>
                     <img
+                        onClick={() => {
+                            router.push("/")
+                        }}
                         src="/logo_widht_high.svg"
                         alt="logo"
                         className={Style.logo}
