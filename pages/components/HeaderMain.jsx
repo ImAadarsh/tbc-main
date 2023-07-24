@@ -6,23 +6,22 @@ import SpacePopup from "./SpacePopup";
 
 export default function Header() {
     const [cartShow, setCartShow] = useState(false);
-    const [ selectRoute, setSelectRoute ] = useState("")
+    const [selectRoute, setSelectRoute] = useState("");
     const router = useRouter();
 
     useEffect(() => {
         setSelectRoute(router.pathname);
-    }, [ router.pathname ]);
+    }, [router.pathname]);
 
     useEffect(() => {
-        if(document.querySelector("body").clientWidth <= 1000) {
+        if (document.querySelector("body").clientWidth <= 1000) {
             const alert_bar = document.querySelector("#aleart_line_text");
-            alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
+            alert_bar.innerHTML =
+                "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
         }
     }, []);
 
-    useEffect(() => {
-
-    }, [  ]);
+    useEffect(() => {}, []);
 
     return (
         <>
@@ -60,7 +59,7 @@ export default function Header() {
                 <div className={Style.left}>
                     <img
                         onClick={() => {
-                            router.push("/")
+                            router.push("/");
                         }}
                         src="/logo_widht_high.svg"
                         alt="logo"
@@ -70,33 +69,75 @@ export default function Header() {
                 <div className={Style.mid}>
                     <ul>
                         <li>
-                            <Link style={{ 
-                                background: selectRoute.includes("/browse") ? "rgba(50, 224, 251, 0.15)" : "none", 
-                                padding: selectRoute.includes("/browse") ? "0.5rem 1rem" : "none",
-                                borderRadius: selectRoute.includes("/browse") ? "12px" : "none"
-                            }}
+                            <Link
+                                style={{
+                                    background: selectRoute.includes("/browse")
+                                        ? "rgba(50, 224, 251, 0.15)"
+                                        : "none",
+                                    padding: selectRoute.includes("/browse")
+                                        ? "0.5rem 1rem"
+                                        : "none",
+                                    borderRadius: selectRoute.includes(
+                                        "/browse",
+                                    )
+                                        ? "12px"
+                                        : "none",
+                                }}
                                 href={"/browse"}
-                            >Browse Cravings</Link>
+                            >
+                                Browse Cravings
+                            </Link>
                         </li>
                         <li>
-                            <Link style={{ 
-                                background: selectRoute.includes("/how-it-works") ? "rgba(50, 224, 251, 0.15)" : "none", 
-                                padding: selectRoute.includes("/how-it-works") ? "0.5rem 1rem" : "none",
-                                borderRadius: selectRoute.includes("/how-it-works") ? "12px" : "none"
-                            }} href={"/how-it-works"}>How it works</Link>
+                            <Link
+                                style={{
+                                    background: selectRoute.includes(
+                                        "/how-it-works",
+                                    )
+                                        ? "rgba(50, 224, 251, 0.15)"
+                                        : "none",
+                                    padding: selectRoute.includes(
+                                        "/how-it-works",
+                                    )
+                                        ? "0.5rem 1rem"
+                                        : "none",
+                                    borderRadius: selectRoute.includes(
+                                        "/how-it-works",
+                                    )
+                                        ? "12px"
+                                        : "none",
+                                }}
+                                href={"/how-it-works"}
+                            >
+                                How it works
+                            </Link>
                         </li>
                         <li>
-                            <Link style={{ 
-                                background: selectRoute.includes("/faq") ? "rgba(50, 224, 251, 0.15)" : "none", 
-                                padding: selectRoute.includes("/faq") ? "0.5rem 1rem" : "none",
-                                borderRadius: selectRoute.includes("/faq") ? "12px" : "none"
-                            }} href={"/faq"}>FAQ</Link>
+                            <Link
+                                style={{
+                                    background: selectRoute.includes("/faq")
+                                        ? "rgba(50, 224, 251, 0.15)"
+                                        : "none",
+                                    padding: selectRoute.includes("/faq")
+                                        ? "0.5rem 1rem"
+                                        : "none",
+                                    borderRadius: selectRoute.includes("/faq")
+                                        ? "12px"
+                                        : "none",
+                                }}
+                                href={"/faq"}
+                            >
+                                FAQ
+                            </Link>
                         </li>
                     </ul>
                 </div>
-                <div onClick={() => {
+                <div
+                    onClick={() => {
                         setCartShow(!cartShow);
-                    }} className={Style.right}>
+                    }}
+                    className={Style.right}
+                >
                     <button className="button_main">
                         <p>Cart</p>
                         <div className="button_logo">
@@ -120,14 +161,97 @@ export default function Header() {
                 </div>
                 <SpacePopup
                     id={2}
-                    title={<h2>Cart <span>(2 items)</span></h2>}
+                    title={
+                        <h2>
+                            Cart <span>(2 items)</span>
+                        </h2>
+                    }
                     show={cartShow}
                     setFunc={setCartShow}
-                    item={<h1>Hello</h1>}
+                    item={
+                        <div className={Style.cart_items}>
+                            <div className="cart_items_head">
+                                <h2>ITEMS</h2>
+                                <h2>QTY</h2>
+                            </div>
+                            <div className={Style.cart_item}>
+                                <div className={Style.cart_item_img}>
+                                    <img src="/dish_item.svg" alt="cart_item" />
+                                    <h2>Pizza</h2>
+                                </div>
+                                <div className={Style.cart_item_controls}>
+                                    <div
+                                        className={
+                                            Style.cart_item_controls_left
+                                        }
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
+                                                d="M0 8C0 7.44772 0.447715 7 1 7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H1C0.447715 9 0 8.55228 0 8Z"
+                                                fill="#545454"
+                                                fillOpacity="0.32"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h4>2</h4>
+                                    <div
+                                        className={
+                                            Style.cart_item_controls_right
+                                        }
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
+                                                d="M8 0C8.55228 0 9 0.447715 9 1V7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H9V15C9 15.5523 8.55228 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7H7V1C7 0.447715 7.44772 0 8 0Z"
+                                                fill="#545454"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M8 0C8.55228 0 9 0.447715 9 1V7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H9V15C9 15.5523 8.55228 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7H7V1C7 0.447715 7.44772 0 8 0Z"
+                                        fill="#545454"
+                                    />
+                                </svg>
+                                Add more items
+                            </button>
+                        </div>
+                    }
                 />
-                <div onClick={(e) => {
-                    document.querySelector("#crausla_bar").style.display = "flex";
-                }} className={Style.hamebargar}>
+                <div
+                    onClick={(e) => {
+                        document.querySelector("#crausla_bar").style.display =
+                            "flex";
+                    }}
+                    className={Style.hamebargar}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="25"
@@ -158,9 +282,14 @@ export default function Header() {
                             alt="logo"
                             className={Style.logo}
                         />
-                        <div onClick={(e) => {
-                            document.querySelector("#crausla_bar").style.display = "none";
-                        }} className={Style.top_cross}>
+                        <div
+                            onClick={(e) => {
+                                document.querySelector(
+                                    "#crausla_bar",
+                                ).style.display = "none";
+                            }}
+                            className={Style.top_cross}
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="49"

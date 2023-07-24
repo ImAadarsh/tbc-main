@@ -66,6 +66,32 @@
     cursor: pointer;
 }
 
+/* for carts items  */
+.cart_item_controls {
+    display: flex;
+    align-items: center;
+    column-gap: 0.7rem;
+}
+
+.cart_item_controls_left svg, .cart_item_controls_right svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.cart_item_controls_left, .cart_item_controls_right {
+    display: flex;
+    padding: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(84, 84, 84, 0.16);
+}
+
+.cart_item_controls_right:hover {
+    background: rgba(50, 224, 251, 0.10);
+    border: 1px solid rgba(50, 224, 251, 0.10);
+}
+
 @media screen and (max-width: 1000px) {
     .aleart_line {
         padding: 0.5rem 1rem;
