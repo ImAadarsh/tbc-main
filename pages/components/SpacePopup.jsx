@@ -4,20 +4,21 @@ import Style from "./SpacePopup.module.css";
 export default function SpacePopup(props) {
     useEffect(() => {
         if(props.show) {
-            document.getElementById("SpacePopup").style.display = "flex";
+            document.getElementById(`SpacePopup_${props.id}`).style.display = "flex";
         }else {
-            document.getElementById("SpacePopup").style.display = "none";
+            document.getElementById(`SpacePopup_${props.id}`).style.display = "none";
         }
     }, [ props ]);
     return (
-        <div id="SpacePopup" className={Style.SpacePopupSection}>
+        <div id={`SpacePopup_${props.id}`} className={Style.SpacePopupSection}>
             <div className={Style.SpacePopup}>
                 <div className={Style.SpacePopup_card_head}>
-                    <h2>{props.title}</h2>
+                    {props.title}
                     <div
                         className={Style.SpacePopup_cross_icon}
                         onClick={() => {
-                            document.getElementById("SpacePopup").style.display = "none";
+                            document.getElementById(`SpacePopup_${props.id}`).style.display = "none";
+                            props.setFunc(false);
                         }}
                     >
                         <svg

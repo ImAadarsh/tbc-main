@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import Style from "./HeaderMain.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import SpacePopup from "./SpacePopup";
 
 export default function Header() {
+    const [cartShow, setCartShow] = useState(false);
     const [ selectRoute, setSelectRoute ] = useState("")
     const router = useRouter();
 
@@ -17,6 +19,10 @@ export default function Header() {
             alert_bar.innerHTML = "<b>TBC10 to get 10$ off | BOSTON20 for 20% off<b>";
         }
     }, []);
+
+    useEffect(() => {
+
+    }, [  ]);
 
     return (
         <>
@@ -88,7 +94,9 @@ export default function Header() {
                         </li>
                     </ul>
                 </div>
-                <div className={Style.right}>
+                <div onClick={() => {
+                        setCartShow(!cartShow);
+                    }} className={Style.right}>
                     <button className="button_main">
                         <p>Cart</p>
                         <div className="button_logo">
@@ -110,6 +118,13 @@ export default function Header() {
                         <span>1</span>
                     </button>
                 </div>
+                <SpacePopup
+                    id={2}
+                    title={<h2>Cart <span>(2 items)</span></h2>}
+                    show={cartShow}
+                    setFunc={setCartShow}
+                    item={<h1>Hello</h1>}
+                />
                 <div onClick={(e) => {
                     document.querySelector("#crausla_bar").style.display = "flex";
                 }} className={Style.hamebargar}>

@@ -1,11 +1,21 @@
 import Style from "./index.module.css";
 import ItemCard from "../components/ItemCard";
 import SpacePopup from "../components/SpacePopup";
-import { useState } from "react";
-import { Accordion, AccordionItem } from "@szhsin/react-accordion";
+import { useEffect, useState } from "react";
 
 export default function Items() {
     const [filterShow, setFilterShow] = useState(false);
+    const [filterUnderShow, setFilterUnderShow] = useState(true);
+
+    useEffect(() => {
+        if(filterUnderShow) {
+            document.querySelector("#FilterList").style = "transform: rotate(180deg);";
+            document.querySelector("#FilterOptions_body").style = "display: block;";
+        }else {
+            document.querySelector("#FilterList").style = "transform: rotate(0deg);";
+            document.querySelector("#FilterOptions_body").style = "display: none;";
+        }
+    }, [ filterUnderShow ]);
 
     return (
         <>
@@ -42,13 +52,18 @@ export default function Items() {
                             <h4>Filters</h4>
                         </div>
                         <SpacePopup
-                            title={"Filters"}
+                            id={1}
+                            title={<h2>Filters</h2>}
+                            setFunc={setFilterShow}
                             show={filterShow}
                             item={
                                 <div className={Style.FilterOptions}>
-                                    <div className={Style.FilterOptions_head}>
+                                    <div onClick={() => {
+                                                setFilterUnderShow(!filterUnderShow);
+                                            }} className={Style.FilterOptions_head}>
                                         <h3>Dietary Preferences</h3>
                                         <svg
+                                            id="FilterList"
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
                                             height="24"
@@ -64,11 +79,44 @@ export default function Items() {
                                         </svg>
                                     </div>
                                     <div
+                                        id="FilterOptions_body"
                                         className={Style.FilterOptions_body}
                                     >
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="field" id="fields" />
-                                            <p>Low Sodium</p>
+                                            <input type="checkbox" name="fields1" id="fields1" />
+                                            <p id="fields1">Low Sodium</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields2" id="fields2" />
+                                            <p id="fields2">Gluten Free</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields3" id="fields3" />
+                                            <p id="fields3">Pescatarian</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields4" id="fields4" />
+                                            <p id="fields4">Balanced</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields5" id="fields5" />
+                                            <p id="fields5">Dairy Free</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields6" id="fields6" />
+                                            <p id="fields6">Diabetic Friendly</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields7" id="fields7" />
+                                            <p id="fields7">Low Carb</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields8" id="fields8" />
+                                            <p id="fields8">Nut Free</p>
+                                        </div>
+                                        <div className={Style.filterFields}>
+                                            <input type="checkbox" name="fields9" id="fields9" />
+                                            <p id="fields9">Low Calorie</p>
                                         </div>
                                     </div>
                                 </div>
