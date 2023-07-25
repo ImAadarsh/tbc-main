@@ -65,13 +65,13 @@ export default function Footer() {
                     <div className={Style.footer_top_sections}>
                         <ul>
                             <li>
-                                <Link href={"/"}>Terms</Link>
+                                <Link href={"/terms"}>Terms</Link>
                             </li>
                             <li>
-                                <Link href={"/"}>Privacy Policy</Link>
+                                <Link href={"/privacy"}>Privacy Policy</Link>
                             </li>
                             <li>
-                                <Link href={"/"}>Accessibility statement</Link>
+                                <Link href={"/accessibility"}>Accessibility statement</Link>
                             </li>
                         </ul>
                     </div>

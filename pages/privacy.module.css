@@ -1,0 +1,51 @@
+.privacy {
+    position: relative;
+}
+
+.background_set {
+    background: url("/top_left_background.svg");
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    height: 18rem;
+}
+
+.background_set img {
+    position: absolute;
+    top: 11rem;
+    right:  13rem;
+    width: 10rem;
+}
+
+.privacy_container {
+    position: absolute;
+    top: 2rem;
+    width: 45%;
+    margin-left: 5rem;
+}
+
+.privacy_container h1 {
+    color: var(--colors-dark-000000100, #000);
+    font-family: Expletus Sans;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.privacy_container h4 {
+    color: var(--colors-gray-545454100, #545454);
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+
+.privacy_peras {
+    padding: 2rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
