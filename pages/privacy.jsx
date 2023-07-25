@@ -1,3 +1,4 @@
+import MidZipRow from "./components/MidZipRow";
 import Style from "./privacy.module.css";
 
 export default function privacy() {
@@ -127,6 +128,7 @@ export default function privacy() {
                     culpa qui officia deserunt mollit anim id est laborum.”
                 </p>
             </div>
+            <MidZipRow/>
         </>
     );
 }

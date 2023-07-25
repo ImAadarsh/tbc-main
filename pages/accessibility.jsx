@@ -1,4 +1,5 @@
 import Style from "./accessibility.module.css";
+import MidZipRow from "./components/MidZipRow";
 
 export default function accessibility() {
     return (
@@ -30,6 +31,7 @@ export default function accessibility() {
                     </p>
                 </div>
             </div>
+            <MidZipRow/>
         </>
     );
 }

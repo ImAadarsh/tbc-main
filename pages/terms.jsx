@@ -1,3 +1,4 @@
+import MidZipRow from "./components/MidZipRow";
 import Style from "./terms.module.css";
 
 export default function Terms() {
@@ -127,6 +128,7 @@ export default function Terms() {
                     culpa qui officia deserunt mollit anim id est laborum.”
                 </p>
             </div>
+            <MidZipRow/>
         </>
     );
 }
