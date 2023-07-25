@@ -240,36 +240,22 @@ export default function Index() {
                     <div className={Style.categories_mid}>
                         <h2>Craving’s master top pick</h2>
                         <div className={Style.categories_mid_items}>
-                            <ItemCard
-                                id={"1"}
-                                image={"./dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                id={"2"}
-                                image={"./dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                id={"3"}
-                                image={"./dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
+                            {
+                                [1, 2, 3].map((item, index) => {
+                                    return (
+                                        <ItemCard
+                                            id={item}
+                                            image={"../dish_item.svg"}
+                                            name={"Blueberry Pancakes"}
+                                            price={"$5"}
+                                            time={"45 - 60 min"}
+                                            itemCount={1}
+                                            itemIncDec={(n) => {}}
+                                            addCardButton={() => {}}
+                                        />
+                                    );
+                                })
+                            }
                         </div>
                     </div>
                     <div className={Style.categories_bottom}>

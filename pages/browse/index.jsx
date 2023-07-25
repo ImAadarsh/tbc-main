@@ -219,60 +219,22 @@ export default function Items() {
                             <h1>All day</h1>
                         </div>
                         <div className={Style.items_cards_sections}>
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
+                            {
+                                [1, 2, 3, 4, 5, 6].map((item, index) => {
+                                    return (
+                                        <ItemCard
+                                            id={item}
+                                            image={"../dish_item.svg"}
+                                            name={"Blueberry Pancakes"}
+                                            price={"$5"}
+                                            time={"45 - 60 min"}
+                                            itemCount={1}
+                                            itemIncDec={(n) => {}}
+                                            addCardButton={() => {}}
+                                        />
+                                    );
+                                })
+                            }
                         </div>
                     </div>
                     <div id="morning" className={Style.items_cards}>
@@ -294,60 +256,22 @@ export default function Items() {
                             <h1>Morning</h1>
                         </div>
                         <div className={Style.items_cards_sections}>
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
-                            <ItemCard
-                                image={"../dish_item.svg"}
-                                name={"Blueberry Pancakes"}
-                                price={"$5"}
-                                time={"45 - 60 min"}
-                                itemCount={1}
-                                itemIncDec={(n) => {}}
-                                addCardButton={() => {}}
-                            />
+                        {
+                                [1, 2, 3, 4, 5, 6].map((item, index) => {
+                                    return (
+                                        <ItemCard
+                                            id={item}
+                                            image={"../dish_item.svg"}
+                                            name={"Blueberry Pancakes"}
+                                            price={"$5"}
+                                            time={"45 - 60 min"}
+                                            itemCount={1}
+                                            itemIncDec={(n) => {}}
+                                            addCardButton={() => {}}
+                                        />
+                                    );
+                                })
+                            }
                         </div>
                     </div>
                 </div>

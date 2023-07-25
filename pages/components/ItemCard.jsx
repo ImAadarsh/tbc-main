@@ -4,19 +4,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 var Carousel = require("react-responsive-carousel").Carousel;
 
 export default function ItemCard(props) {
-    const [hide, setHide] = useState(true);
+    const [hide, setHide] = useState(false);
 
     useEffect(() => {
         document.getElementById(`popup_container_${props.id}`).style.display =
-            hide ? "none" : "flex";
-    }, [hide]);
+            hide ? "flex" : "none";
+    }, [ hide ]);
 
     return (
         <>
             <div className={Style.categories_mid_item}>
                 <div
                     onClick={() => {
-                        setHide(!hide);
+                        setHide(true);
                     }}
                     className={Style.categories_mid_item_top}
                 >
@@ -127,7 +127,7 @@ export default function ItemCard(props) {
                                     Style.categories_select_card_cross_icon
                                 }
                                 onClick={() => {
-                                    setHide(!hide);
+                                    setHide(false);
                                 }}
                             >
                                 <svg
