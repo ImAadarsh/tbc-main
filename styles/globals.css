@@ -294,6 +294,6 @@ body {
     
     .dish_g {
         width: 10rem;
-        transform: translateX(110px) translateY(-105px);
+        transform: translateX(110px) translateY(-105px) !important;
     }
 }
