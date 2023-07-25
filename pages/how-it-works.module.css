@@ -1,0 +1,112 @@
+.how {
+    position: relative;
+}
+
+.background_set {
+    background: url("/top_background.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: 22rem;
+    margin-top: -4rem;
+}
+
+.background_set img {
+    position: absolute;
+    top: calc(50% + 5rem);
+    right:  calc(50% - 5rem);
+    width: 10rem;
+}
+
+.how_container {
+    position: absolute;
+    top: 2rem;
+    width: 45%;
+    margin-left: 5rem;
+}
+
+.how_container h1 {
+    color: var(--colors-dark-000000100, #000);
+    font-family: Expletus Sans;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.how_container h4 {
+    color: var(--colors-gray-545454100, #545454);
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+
+.how_peras {
+    padding: 2rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+
+.how_it_work {
+    margin-top: 8rem;
+}
+
+.how_it_work_top h1 {
+    color: var(--colors-dark-000000100, #000);
+    text-align: center;
+    font-family: Expletus Sans;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.how_it_work_cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 5rem;
+    margin-top: 4rem;
+}
+
+.how_it_work_card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+.how_it_work_bottom_set {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+}
+
+.how_it_work_cards svg {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 0.7rem;
+}
+
+.how_it_work_cards img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.7rem;
+}
+
+.how_it_work_card h3 {
+    font-family: Expletus Sans;
+    font-size: 1.2rem;
+}
+
+.how_it_work_card p {
+    font-family: Noto Sans;
+    font-size: 1rem;
+    margin-top: .6rem;
+}
