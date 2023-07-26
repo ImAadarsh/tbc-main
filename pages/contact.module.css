@@ -1,0 +1,75 @@
+.contact {
+    position: relative;
+}
+
+.background_set {
+    background: url("/top_left_background.svg");
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    height: 18rem;
+}
+
+.background_set img {
+    position: absolute;
+    top: 11rem;
+    right: 13rem;
+    width: 10rem;
+}
+
+.contact_container {
+    position: absolute;
+    top: 2rem;
+    width: 30%;
+    margin-left: 5rem;
+}
+
+.contact_container h1 {
+    color: var(--colors-dark-000000100, #000);
+    font-family: Expletus Sans;
+    font-size: 2.5rem;
+    font-weight: 700;
+    width: 60%;
+}
+
+.contacts_fields {
+    margin-top: 3rem;
+}
+
+.contact_field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.contact_field label {
+    color: var(--colors-text-dark-111111100, #111);
+    font-family: Noto Sans;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.contact_field label span {
+    color: var(--colors-error-100, #F00);
+    font-family: Noto Sans;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 0.25rem;
+}
+
+.contact_field input {
+    margin-top: 0.3rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid  rgba(84, 84, 84, 0.16);
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.space {
+    margin-bottom: 20rem;
+}
