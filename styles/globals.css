@@ -224,17 +224,17 @@ body {
 
 .dish_e {
     width: 8rem;
-    transform: translateX(220px) translateY(190px);
+    transform: translateX(218px) translateY(250px);
 }
 
 .dish_f {
     width: 8rem;
-    transform: translateX(-150px) translateY(60px);
+    transform: translateX(-137px) translateY(120px);
 }
 
 .dish_g {
-    width: 18rem;
-    transform: translateX(-118px) translateY(0px);
+    width: 14rem;
+    transform: translateX(-85px) translateY(25px);
 }
 
 .dot {
