@@ -291,6 +291,11 @@ export default function Header() {
                                 </svg>
                                 Add more items
                             </Link>
+                            <Link href={"/checkout"} className={Style.checkout_btn}>
+                                <button className="button_main">
+                                    Checkout - $250.00
+                                </button>
+                            </Link>
                         </div>
                     }
                 />
