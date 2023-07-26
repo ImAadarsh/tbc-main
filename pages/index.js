@@ -244,6 +244,7 @@ export default function Index() {
                                 [1, 2, 3].map((item, index) => {
                                     return (
                                         <ItemCard
+                                            key={item}
                                             id={item}
                                             image={"../dish_item.svg"}
                                             name={"Blueberry Pancakes"}
