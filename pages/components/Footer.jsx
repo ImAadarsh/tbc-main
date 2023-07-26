@@ -42,23 +42,23 @@ export default function Footer() {
                     <div className={Style.footer_top_sections}>
                         <ul>
                             <li>
-                                <a href={"#"}>Browse Cravings</a>
+                                <a href={"/browse"}>Browse Cravings</a>
                             </li>
                             <li>
-                                <a href={"#login"}>Ambassador login</a>
+                                <a href={"/ambassadors"}>Ambassador login</a>
                             </li>
                             <li>
-                                <a href={"#how_it_work"}>How it works</a>
+                                <a href={"/how-it-works"}>How it works</a>
                             </li>
                         </ul>
                     </div>
                     <div className={Style.footer_top_sections}>
                         <ul>
                             <li>
-                                <Link href={"/"}>Contact us</Link>
+                                <Link href={"/contact"}>Contact us</Link>
                             </li>
                             <li>
-                                <Link href={"/"}>FAQ’s</Link>
+                                <Link href={"/faq"}>FAQ’s</Link>
                             </li>
                         </ul>
                     </div>
