@@ -359,13 +359,25 @@ export default function Header() {
                         <div className={Style.mid_top_bar}>
                             <ul>
                                 <li>
-                                    <Link href={"/"}>Browse Cravings</Link>
+                                    <Link onClick={() => {
+                                        document.querySelector(
+                                            "#crausla_bar",
+                                        ).style.display = "none";
+                                    }} href={"/browse"}>Browse Cravings</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>How it works</Link>
+                                    <Link onClick={() => {
+                                        document.querySelector(
+                                            "#crausla_bar",
+                                        ).style.display = "none";
+                                    }} href={"/how-it-works"}>How it works</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>FAQ</Link>
+                                    <Link onClick={() => {
+                                        document.querySelector(
+                                            "#crausla_bar",
+                                        ).style.display = "none";
+                                    }} href={"/faq"}>FAQ</Link>
                                 </li>
                             </ul>
                         </div>
