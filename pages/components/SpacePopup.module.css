@@ -9,7 +9,7 @@
     justify-content: flex-end;
     align-items: top;
     -webkit-user-select: none;
-    z-index: 5;
+    z-index: 16;
     display: none;
 }
 
