@@ -258,7 +258,7 @@ export default function Items() {
                         </div>
                         <div className={Style.items_cards_sections}>
                         {
-                                [1, 2, 3, 4, 5, 6].map((item, index) => {
+                                [7, 8, 9, 10, 11, 12].map((item, index) => {
                                     return (
                                         <ItemCard
                                             key={item}
