@@ -110,3 +110,34 @@
     font-size: 1rem;
     margin-top: .6rem;
 }
+
+@media screen and (max-width: 1000px)  {
+    .background_set {
+        background-size: 140%;
+        height: 14rem;
+    }
+    .background_set img {
+        top: calc(50% + 1rem);
+        right: calc(50% - 3.5rem);
+        width: 7rem;
+    }
+    .how_it_work {
+        margin-top: 2rem;
+    }
+    .how_it_work_cards {
+        align-items: center;
+    }
+    .how_it_work_card {
+        margin: 0 0 !important;
+        column-gap: 0.5rem;
+    }
+
+    .how_it_work_bottom_set {
+        width: 70%;
+    }
+
+    .how_it_work_cards svg {
+        width: 4rem;
+        height: 4rem;
+    }
+}

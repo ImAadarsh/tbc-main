@@ -49,3 +49,31 @@
     margin-bottom: 1rem;
     margin-left: 3rem;
 }
+
+@media screen and (max-width: 1000px)  {
+    .background_set {
+        background: url("/top_background.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 140%;
+        height: 10rem;
+    }
+    .background_set img {
+        top: calc(50% + 1rem);
+        right: calc(50% - 3.5rem);
+        width: 7rem;
+    }
+    .privacy_container {
+        position: static;
+        margin: 0;
+        margin: auto;
+        margin-top: 5rem;
+        width: 90%;
+        word-break: break-all;
+    }
+    .privacy_peras {
+        margin: auto;
+        padding: 2rem 0;
+        width: 90%;
+    }
+}

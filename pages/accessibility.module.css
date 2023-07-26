@@ -40,3 +40,32 @@
     font-weight: 400;
     padding: 1rem 0;
 }
+
+
+@media screen and (max-width: 1000px)  {
+    .accessibility {
+        height: 100%;
+    }
+    .background_set {
+        background: url("/top_background.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 140%;
+        height: 10rem;
+    }
+    .background_set img {
+        top: calc(50% + 1rem);
+        right: calc(50% - 3.5rem);
+        width: 7rem;
+    }
+    .accessibility_container h1 {
+        margin-bottom: 1rem;
+    }
+    .accessibility_container {
+        position: static !important;
+        margin: 0;
+        margin: auto;
+        margin-top: 5rem;
+        width: 90%;
+    }
+}

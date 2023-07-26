@@ -73,3 +73,33 @@
 .space {
     margin-bottom: 20rem;
 }
+
+
+@media screen and (max-width: 1000px)  {
+    .background_set {
+        background: url("/top_background.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 140%;
+        height: 10rem;
+    }
+    .background_set img {
+        top: calc(50% + 1rem);
+        right: calc(50% - 3.5rem);
+        width: 7rem;
+    }
+    .contact_container h1 {
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+    .contact_container {
+        position: static;
+        margin: 0;
+        margin: auto;
+        margin-top: 5rem;
+        width: 90%;
+    }
+    .space {
+        margin-bottom: 4rem;
+    }
+}
