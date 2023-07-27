@@ -438,15 +438,17 @@ export default function checkout() {
                             <h4>$ 4</h4>
                         </div>
                         <div className={Style.tip_column}>
-                            <h4>$ <input type="text" /></h4>
+                            <h4>$ <input placeholder="Custom" type="number" /></h4>
                         </div>
                     </div>
-                    <div className={Style.order_details}>
-                        <h3>Total</h3>
-                        <h2>$25.00</h2>
+                    <div className={Style.Float_order_button}>
+                        <div className={Style.order_details}>
+                            <h3>Total</h3>
+                            <h2>$25.00</h2>
+                        </div>
+                        <p style={{textAlign: "center", color: "rgba(84, 84, 84, 0.32)"}}>*By placing your order, you agree to the Boston cravings Terms and conditions and Privacy Policy</p>
+                        <button className={`button_main ${Style.order_button}`}>Place Order</button>
                     </div>
-                    <p style={{textAlign: "center", color: "rgba(84, 84, 84, 0.32)"}}>*By placing your order, you agree to the Boston cravings Terms and conditions and Privacy Policy</p>
-                    <button className={`button_main ${Style.order_button}`}>Place Order</button>
                 </div>
             </div>
         </>

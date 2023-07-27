@@ -268,6 +268,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 1rem
 }
 
 .promo_code_details {
@@ -352,4 +353,62 @@
     padding: 0.8rem 0;
     font-size: 1.2rem;
     margin-top: 1rem;
+}
+
+.Float_order_button {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+    .checkout {
+        width: auto;
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+    .checkout_delivery_address {
+        grid-template-columns: 1fr;
+    }
+    .left_side {
+        grid-template-columns: 1fr;
+    }
+    .right_side {
+        padding: 2rem !important;
+        margin: auto;
+    }
+    .checkout_summary_items {
+        height: auto;
+        overflow: auto;
+    }
+    .promo_code_details_input {
+        padding: 1rem;
+    }
+    .promo_code_details_input input {
+        font-size: 1.5rem !important;
+    }
+    .promo_code_details_input button {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .tip_column input {
+        width: 10rem;
+        color: black;
+    }
+
+    .back_container {
+        justify-content: flex-start;
+        padding-left: 1.5rem;
+    }
+
+    .order_tip {
+        margin-bottom: 11rem;
+    }
+
+    .Float_order_button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 1.5rem;
+        background: white;
+    }
 }
