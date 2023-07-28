@@ -160,6 +160,19 @@
     width: 1em; /* Also needed for space (tweak if needed) */
 }
 
+/* transform up keyframe buncing */
+@keyframes transformUp {
+    0% {
+        transform: translateY(100%);
+    }
+    90% {
+        transform: translateY(-8%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .categories_mid_item {
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -169,9 +182,14 @@
     }
 
     .categories_select_card {
-        width: -webkit-fill-available;
-        width: -moz-available;
-        height: 17rem;
-        margin: 1.5rem;
+        width: 100% !important;
+        height: fit-content !important;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .categories_select_container {
+        animation: transformUp 0.6s ease-in-out;
+        align-items: flex-end;
+        z-index: 15;
     }
 }

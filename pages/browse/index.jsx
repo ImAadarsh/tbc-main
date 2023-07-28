@@ -2,20 +2,25 @@ import Style from "./index.module.css";
 import ItemCard from "../components/ItemCard";
 import SpacePopup from "../components/SpacePopup";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Items() {
     const [filterShow, setFilterShow] = useState(false);
     const [filterUnderShow, setFilterUnderShow] = useState(true);
 
     useEffect(() => {
-        if(filterUnderShow) {
-            document.querySelector("#FilterList").style = "transform: rotate(180deg);";
-            document.querySelector("#FilterOptions_body").style = "display: block;";
-        }else {
-            document.querySelector("#FilterList").style = "transform: rotate(0deg);";
-            document.querySelector("#FilterOptions_body").style = "display: none;";
+        if (filterUnderShow) {
+            document.querySelector("#FilterList").style =
+                "transform: rotate(180deg);";
+            document.querySelector("#FilterOptions_body").style =
+                "display: block;";
+        } else {
+            document.querySelector("#FilterList").style =
+                "transform: rotate(0deg);";
+            document.querySelector("#FilterOptions_body").style =
+                "display: none;";
         }
-    }, [ filterUnderShow ]);
+    }, [filterUnderShow]);
 
     return (
         <>
@@ -58,9 +63,14 @@ export default function Items() {
                             show={filterShow}
                             item={
                                 <div className={Style.FilterOptions}>
-                                    <div onClick={() => {
-                                                setFilterUnderShow(!filterUnderShow);
-                                            }} className={Style.FilterOptions_head}>
+                                    <div
+                                        onClick={() => {
+                                            setFilterUnderShow(
+                                                !filterUnderShow,
+                                            );
+                                        }}
+                                        className={Style.FilterOptions_head}
+                                    >
                                         <h3>Dietary Preferences</h3>
                                         <svg
                                             id="FilterList"
@@ -83,39 +93,77 @@ export default function Items() {
                                         className={Style.FilterOptions_body}
                                     >
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields1" id="fields1" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields1"
+                                                id="fields1"
+                                            />
                                             <p id="fields1">Low Sodium</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields2" id="fields2" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields2"
+                                                id="fields2"
+                                            />
                                             <p id="fields2">Gluten Free</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields3" id="fields3" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields3"
+                                                id="fields3"
+                                            />
                                             <p id="fields3">Pescatarian</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields4" id="fields4" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields4"
+                                                id="fields4"
+                                            />
                                             <p id="fields4">Balanced</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields5" id="fields5" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields5"
+                                                id="fields5"
+                                            />
                                             <p id="fields5">Dairy Free</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields6" id="fields6" />
-                                            <p id="fields6">Diabetic Friendly</p>
+                                            <input
+                                                type="checkbox"
+                                                name="fields6"
+                                                id="fields6"
+                                            />
+                                            <p id="fields6">
+                                                Diabetic Friendly
+                                            </p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields7" id="fields7" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields7"
+                                                id="fields7"
+                                            />
                                             <p id="fields7">Low Carb</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields8" id="fields8" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields8"
+                                                id="fields8"
+                                            />
                                             <p id="fields8">Nut Free</p>
                                         </div>
                                         <div className={Style.filterFields}>
-                                            <input type="checkbox" name="fields9" id="fields9" />
+                                            <input
+                                                type="checkbox"
+                                                name="fields9"
+                                                id="fields9"
+                                            />
                                             <p id="fields9">Low Calorie</p>
                                         </div>
                                     </div>
@@ -219,23 +267,21 @@ export default function Items() {
                             <h1>All day</h1>
                         </div>
                         <div className={Style.items_cards_sections}>
-                            {
-                                [1, 2, 3, 4, 5, 6].map((item, index) => {
-                                    return (
-                                        <ItemCard
-                                            key={item}
-                                            id={item}
-                                            image={"../dish_item.svg"}
-                                            name={"Blueberry Pancakes"}
-                                            price={"$5"}
-                                            time={"45 - 60 min"}
-                                            itemCount={1}
-                                            itemIncDec={(n) => {}}
-                                            addCardButton={() => {}}
-                                        />
-                                    );
-                                })
-                            }
+                            {[1, 2, 3, 4, 5, 6].map((item, index) => {
+                                return (
+                                    <ItemCard
+                                        key={item}
+                                        id={item}
+                                        image={"../dish_item.svg"}
+                                        name={"Blueberry Pancakes"}
+                                        price={"$5"}
+                                        time={"45 - 60 min"}
+                                        itemCount={1}
+                                        itemIncDec={(n) => {}}
+                                        addCardButton={() => {}}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                     <div id="morning" className={Style.items_cards}>
@@ -257,26 +303,49 @@ export default function Items() {
                             <h1>Morning</h1>
                         </div>
                         <div className={Style.items_cards_sections}>
-                        {
-                                [7, 8, 9, 10, 11, 12].map((item, index) => {
-                                    return (
-                                        <ItemCard
-                                            key={item}
-                                            id={item}
-                                            image={"../dish_item.svg"}
-                                            name={"Blueberry Pancakes"}
-                                            price={"$5"}
-                                            time={"45 - 60 min"}
-                                            itemCount={1}
-                                            itemIncDec={(n) => {}}
-                                            addCardButton={() => {}}
-                                        />
-                                    );
-                                })
-                            }
+                            {[7, 8, 9, 10, 11, 12].map((item, index) => {
+                                return (
+                                    <ItemCard
+                                        key={item}
+                                        id={item}
+                                        image={"../dish_item.svg"}
+                                        name={"Blueberry Pancakes"}
+                                        price={"$5"}
+                                        time={"45 - 60 min"}
+                                        itemCount={1}
+                                        itemIncDec={(n) => {}}
+                                        addCardButton={() => {}}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
+            </div>
+            <div onClick={() => {
+                document.querySelector("#SpacePopup_2").style = "display: flex";
+            }} className={Style.bottom_card_div}>
+                <div className={Style.bottom_card_div_head}>
+                    <h4>2 Items</h4>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="10"
+                        viewBox="0 0 16 10"
+                        fill="none"
+                    >
+                        <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M0.334735 9.66526C0.781049 10.1116 1.50467 10.1116 1.95098 9.66526L8 3.61624L14.049 9.66526C14.4953 10.1116 15.219 10.1116 15.6653 9.66526C16.1116 9.21895 16.1116 8.49533 15.6653 8.04902L8.80812 1.19188C8.36181 0.745564 7.63819 0.745564 7.19188 1.19188L0.334735 8.04902C-0.111578 8.49533 -0.111578 9.21895 0.334735 9.66526Z"
+                            fill="white"
+                        />
+                    </svg>
+                    <h4>$5.00</h4>
+                </div>
+                <Link href={"/checkout"}>
+                <button className="button_main">Checkout</button>
+                </Link>
             </div>
         </>
     );

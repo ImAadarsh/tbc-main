@@ -74,7 +74,7 @@ export default function Index() {
 
     useEffect(() => {
         if(document.querySelector("body").clientWidth <= 1000) {
-            inter = setInterval(() => {
+            setInterval(() => {
                 chnageOrder(platePosition);
                 setPlatePosition(platePosition + 1);
             }, 3000);
