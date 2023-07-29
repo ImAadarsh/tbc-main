@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Style from "./ItemCard.module.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 var Carousel = require("react-responsive-carousel").Carousel;
+import disableScroll from 'disable-scroll';
 
 export default function ItemCard(props) {
     const [hide, setHide] = useState(false);
@@ -9,6 +10,18 @@ export default function ItemCard(props) {
     useEffect(() => {
         document.getElementById(`popup_container_${props.id}`).style.display =
             hide ? "flex" : "none";
+
+        if(hide) {
+            disableScroll.on();
+            for(let i = 0; i < document.getElementsByClassName("control-dots").length; i++) {
+                document.getElementsByClassName("control-dots")[i].style.left = "0px";
+            }
+        }else {
+            disableScroll.off();
+            for(let i = 0; i < document.getElementsByClassName("control-dots").length; i++) {
+                document.getElementsByClassName("control-dots")[i].style.left = "-9.5rem";
+            }
+        }
     }, [ hide ]);
 
     return (
@@ -192,6 +205,7 @@ export default function ItemCard(props) {
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut corporis eligendi, numquam eos nisi accusamus sit veniam blanditiis nemo.
                             </p>
                             <div className={Style.categories_select_card_popup_card_body_list}>
+                                <h4>Nutrition facts</h4>
                                 <ul>
                                     <li>caleor</li>
                                     <li>caleor</li>

@@ -21,7 +21,7 @@ export default function checkout() {
                         <div className={Style.checkout_summary}>
                             <div className={Style.checkout_summary_title}>
                                 <h2>
-                                    Checkout Summary<span> (2 items)</span>
+                                    Summary<span> (2 items)</span>
                                 </h2>
                                 <Link
                                     href={"/browse"}
@@ -48,7 +48,7 @@ export default function checkout() {
                                 <div className={Style.cart_items}>
                                     <div className={Style.cart_items_head}>
                                         <h2>ITEMS</h2>
-                                        <h2>QTY</h2>
+                                        <h2 className={Style.qty}>QTY</h2>
                                         <h2>AMOUNT</h2>
                                     </div>
                                     <div className={Style.cart_item}>
@@ -170,6 +170,27 @@ export default function checkout() {
                                     </div>
                                 </div>
                             </div>
+                            <Link
+
+                                    href={"/browse"}
+                                    className={`${Style.cart_addMore} ${Style.card_addBottomMore}`}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            clipRule="evenodd"
+                                            d="M8 0C8.55228 0 9 0.447715 9 1V7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H9V15C9 15.5523 8.55228 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7H7V1C7 0.447715 7.44772 0 8 0Z"
+                                            fill="#545454"
+                                        />
+                                    </svg>
+                                    Add more items
+                                </Link>
                         </div>
                         <div className={Style.checkout_delivery}>
                             <h2>Delivery Address</h2>

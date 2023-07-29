@@ -1,11 +1,33 @@
 import Style from "./Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Footer() {
+    const [selectRoute, setSelectRoute] = useState("");
+    const router = useRouter();
+
+    useEffect(() => {
+        setSelectRoute(router.pathname);
+    }, [router.pathname]);
+
+    useEffect(() => {
+        if(document.querySelector("body").clientWidth <= 1000) {
+            if(selectRoute.includes("/browse") && document.querySelector("#foot_bar")) {
+                document.querySelector("#foot_bar").style.display = "none";
+                document.querySelector("#space").style = "height: 5rem !important; width: auto; display: flex;";
+            }else {
+                document.querySelector("#foot_bar").style.display = "grid";
+                document.querySelector("#space").style = "height: 0 !important; width: 0; display: none;";
+            }
+        }
+    }, [ selectRoute ]);
+
     return (
         <>
-            <footer className={Style.footer}>
+            <span id="space"></span>
+            <footer id="foot_bar" className={Style.footer}>
                 <div className={Style.footer_top}>
                     <div className={Style.footer_top_sections}>
                         <Image

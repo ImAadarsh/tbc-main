@@ -21,7 +21,15 @@ export default function Header() {
         }
     }, []);
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        if(document.querySelector("body").clientWidth <= 1000) {
+            if(selectRoute.includes("/browse") && document.querySelector("#hamebargar_bar")) {
+                document.querySelector("#hamebargar_bar").style.display = "none";
+            }else {
+                document.querySelector("#hamebargar_bar").style.display = "flex";
+            }
+        }
+    }, [ selectRoute ]);
 
     return (
         <>
@@ -291,7 +299,9 @@ export default function Header() {
                                 </svg>
                                 Add more items
                             </Link>
-                            <Link href={"/checkout"} className={Style.checkout_btn}>
+                            <Link href={"/checkout"} onClick={() => {
+                                setCartShow(false);
+                            }} className={Style.checkout_btn}>
                                 <button className="button_main">
                                     Checkout - $250.00
                                 </button>
@@ -304,6 +314,7 @@ export default function Header() {
                         document.querySelector("#crausla_bar").style.display =
                             "flex";
                     }}
+                    id="hamebargar_bar"
                     className={Style.hamebargar}
                 >
                     <svg

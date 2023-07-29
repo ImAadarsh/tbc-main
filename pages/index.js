@@ -72,14 +72,14 @@ export default function Index() {
         document.querySelector(".dish_g").style = "transform: translateX(-85px) translateY(25px) scale(0);"
     };
 
-    useEffect(() => {
-        if(document.querySelector("body").clientWidth <= 1000) {
-            setInterval(() => {
-                chnageOrder(platePosition);
-                setPlatePosition(platePosition + 1);
-            }, 3000);
-        }
-    }, [ platePosition ]);
+    // useEffect(() => {
+    //     if(document.querySelector("body").clientWidth <= 1000) {
+    //         setInterval(() => {
+    //             chnageOrder(platePosition);
+    //             setPlatePosition(platePosition + 1);
+    //         }, 3000);
+    //     }
+    // }, [ platePosition ]);
 
     return (
         <>
@@ -94,7 +94,7 @@ export default function Index() {
                             <span id="kitchen">Steal our kitchen.</span> Everything for $5
                             *Good news: rate includes taxes unlike other apps
                         </p>
-                        <ZipCode placeholder={"Enter Zip code"} />
+                        <ZipCode placeholder={"Enter Zip code"} id={"1"} />
                     </div>
                     <div className={Style.hero_right}>
                         <div id="plates_container" className={Style.plates_container}>

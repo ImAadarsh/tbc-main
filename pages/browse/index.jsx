@@ -344,7 +344,7 @@ export default function Items() {
                     <h4>$5.00</h4>
                 </div>
                 <Link href={"/checkout"}>
-                <button className="button_main">Checkout</button>
+                    <button className="button_main">Checkout</button>
                 </Link>
             </div>
         </>

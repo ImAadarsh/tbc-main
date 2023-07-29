@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import Style from "./SpacePopup.module.css";
+import disableScroll from 'disable-scroll';
 
 export default function SpacePopup(props) {
     useEffect(() => {
         if(props.show) {
             document.getElementById(`SpacePopup_${props.id}`).style.display = "flex";
+            disableScroll.on();
         }else {
             document.getElementById(`SpacePopup_${props.id}`).style.display = "none";
+            disableScroll.off();
         }
     }, [ props ]);
     return (

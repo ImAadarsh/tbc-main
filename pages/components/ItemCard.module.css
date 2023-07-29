@@ -93,7 +93,7 @@
     justify-content: center;
     align-items: center;
     -webkit-user-select: none;
-    z-index: 5;
+    z-index: 15;
     display: none;
 }
 
@@ -183,7 +183,7 @@
 
     .categories_select_card {
         width: 100% !important;
-        height: fit-content !important;
+        height: 80vh !important;
         border-radius: 1.5rem 1.5rem 0 0;
     }
 
@@ -191,5 +191,19 @@
         animation: transformUp 0.6s ease-in-out;
         align-items: flex-end;
         z-index: 15;
+    }
+
+    .categories_select_card_popup_card_body {
+        padding-bottom: 3rem;
+        text-align: start;
+    }
+
+    .categories_select_card_popup_card_body p {
+        text-align: start;
+        margin-top: -1.5rem;
+    }
+
+    .categories_select_card_popup_card_body_list {
+        color: #696969;
     }
 }

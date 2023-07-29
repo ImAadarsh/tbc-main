@@ -11,7 +11,7 @@ export default function ZipCode(props) {
                 <input placeholder={props.placeholder} type="text" name="zipcode" id="zipcode" />
                 <button className='button_main'>Get started</button>
             </div>
-            <ZipCodePopup show={zipCodePopupShow} setFunc={setZipCodePopupShow} id={"1"} />
+            <ZipCodePopup show={zipCodePopupShow} setFunc={setZipCodePopupShow} id={props.id} />
         </>
     );
 }

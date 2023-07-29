@@ -133,3 +133,11 @@
 .button_zip:hover {
     background: #2cbed4;
 }
+
+@media screen and (max-width: 1000px) {
+    .ZipCodePopup {
+        width: 22rem !important;
+        height: 22rem !important;
+        scroll-behavior: contain;
+    }
+}

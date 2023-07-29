@@ -242,4 +242,9 @@
         font-size: 1.3rem;
         width: 100%;
     }
+
+    .control-dots {
+        left: -9.5rem !important;
+        z-index: 1 !important;
+    }
 }

@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "autoprefixer": "10.4.14",
+        "disable-scroll": "^0.6.0",
         "next": "13.4.9",
         "next-redux-wrapper": "^8.1.0",
         "postcss": "8.4.25",

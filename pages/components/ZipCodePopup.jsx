@@ -1,5 +1,6 @@
 import Style from "./ZipCodePopup.module.css";
 import { useEffect } from "react";
+import disableScroll from 'disable-scroll';
 
 export default function ZipCodePopup(props) {
     useEffect(() => {
@@ -10,7 +11,13 @@ export default function ZipCodePopup(props) {
             document.getElementById(`ZipCodePopup_${props.id}`).style.display =
                 "none";
         }
-    }, [props]);
+
+        if (props.show) {
+            disableScroll.on()
+        } else {
+            disableScroll.off();
+        }
+    }, [props.show]);
 
     return (
         <div
@@ -21,9 +28,6 @@ export default function ZipCodePopup(props) {
                 <div className={Style.ZipCodePopup_card_head}>
                     <div
                         onClick={() => {
-                            document.getElementById(
-                                `ZipCodePopup_${props.id}`,
-                            ).style.display = "none";
                             props.setFunc(false);
                         }}
                         className={Style.ZipCodePopup_cross_icon}
