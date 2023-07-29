@@ -105,7 +105,10 @@
 
 @media screen and (max-width: 1000px) {
     .footer {
-        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
         margin-top: 4rem;
     }
     .footer_top {
@@ -116,5 +119,22 @@
         align-items: flex-start;
         flex-direction: column;
         row-gap: 1rem;
+    }
+
+    .footer_top_sections {
+        padding: 1.5rem 0;
+    }
+
+    .footer_top_sections ul {
+        row-gap: 1rem;
+    }
+
+    .footer_top_sections_head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .emial_field input {
+        width: -webkit-fill-available;
     }
 }

@@ -387,6 +387,10 @@
     .checkout_summary_title h2 {
         font-size: 2rem !important;
     }
+
+    .cart_item_controls h4 {
+        font-size: 1.2rem;
+    }
     
     .checkout_summary_title h2 span {
         font-size: 1.5rem !important;
@@ -402,7 +406,7 @@
     }
 
     .qty {
-        margin-left: 5rem;
+        margin-left: 4rem;
     }
 
     .cart_item_controls h4 {
@@ -430,11 +434,23 @@
     }
 
     .checkout_delivery label, .right_side label {
-        font-size: 1.1rem !important;
+        font-size: 1.2rem !important;
+        text-transform: capitalize;
     }
 
-    .checkout_delivery input, .right_side input {
-        font-size: 1.3rem !important;
+    .checkout_delivery_address_field {
+        margin-bottom: 1rem;
+    }
+
+    .wraper {
+        width: 1.8rem;
+        height: 1.8rem;
+        overflow: hidden;
+    }
+
+    .wraper input {
+        width: 1.8rem;
+        height: 1.8rem;
     }
 
     .checkout_delivery_address {

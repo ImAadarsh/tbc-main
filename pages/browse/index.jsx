@@ -276,7 +276,7 @@ export default function Items() {
                                         name={"Blueberry Pancakes"}
                                         price={"$5"}
                                         time={"45 - 60 min"}
-                                        itemCount={1}
+                                        itemCount={item}
                                         itemIncDec={(n) => {}}
                                         addCardButton={() => {}}
                                     />
@@ -312,7 +312,7 @@ export default function Items() {
                                         name={"Blueberry Pancakes"}
                                         price={"$5"}
                                         time={"45 - 60 min"}
-                                        itemCount={1}
+                                        itemCount={item}
                                         itemIncDec={(n) => {}}
                                         addCardButton={() => {}}
                                     />
