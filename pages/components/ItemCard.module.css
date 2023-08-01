@@ -107,6 +107,17 @@
     justify-content: flex-start;
     flex-direction: column;
     text-align: center;
+    overflow: hidden;
+}
+
+.categories_mid_item_top img {
+    width: 20rem;
+    height: 12rem;
+    border-radius: 1.5rem;
+}
+
+.selct_card_image {
+    height: 13.15rem;
 }
 
 .categories_select_card_head {

@@ -172,6 +172,27 @@
     accent-color: currentcolor;
 }
 
+.filter_bottom_bar {
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    column-gap: 1rem;
+    padding: 0 1.5rem;
+}
+
+.filter_bottom_bar button {
+    width: 100%;
+}
+
+.button_next {
+    background: none;
+}
+
+.button_next:hover {
+    background: none;
+}
+
 .bottom_card_div {
     display: none;
 }

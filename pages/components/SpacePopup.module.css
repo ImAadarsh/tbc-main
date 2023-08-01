@@ -14,10 +14,9 @@
 }
 
 .SpacePopup {
-    width: 22rem !important;
-    height: 35rem !important;
+    width: 23.5rem !important;
     flex-shrink: 0;
-    border-end-start-radius: 1.5rem;
+    border-start-start-radius: 1.5rem;
     background: #fff;
     display: flex;
     justify-content: flex-start;

@@ -55,7 +55,7 @@ const images = [
     "",
     "../dish_item.svg",
     "../cake.svg",
-    "../sandwich.svg",
+    "../test_img.jpg",
 ]
 
 export default function Index() {

@@ -157,8 +157,8 @@ export default function ItemCard(props) {
                                 </svg>
                             </div>
                             <Carousel showArrows={false} showThumbs={false}>
-                                <img src={props.image} alt="dish_item" />
-                                <img src={props.image} alt="dish_item" />
+                                <img className={Style.selct_card_image} src={props.image} alt="dish_item" />
+                                <img className={Style.selct_card_image} src={props.image} alt="dish_item" />
                             </Carousel>
                         </div>
                         <div

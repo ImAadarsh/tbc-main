@@ -167,6 +167,14 @@ export default function Items() {
                                             <p id="fields9">Low Calorie</p>
                                         </div>
                                     </div>
+                                    <div className={Style.filter_bottom_bar}>
+                                        <button className={`button_main ${Style.button_next}`}>
+                                            Reset
+                                        </button>
+                                        <button className="button_main">
+                                            Apply
+                                        </button>
+                                    </div>
                                 </div>
                             }
                         />
