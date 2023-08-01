@@ -175,7 +175,7 @@ export default function Items() {
                         <div
                             className={`${Style.categorys} ${Style.categories_select}`}
                         >
-                            <div className={Style.categoryes_image}>
+                            <div className={Style.categoryes_images}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="32"

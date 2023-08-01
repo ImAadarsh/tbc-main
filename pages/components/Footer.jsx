@@ -14,25 +14,33 @@ export default function Footer() {
     }, [router.pathname]);
 
     useEffect(() => {
-        if(document.querySelector("body").clientWidth <= 1000) {
+        if (document.querySelector("body").clientWidth <= 1000) {
             setIsPhoneView(true);
-            if(selectRoute.includes("/browse") && document.querySelector("#foot_bar")) {
+            if (
+                selectRoute.includes("/browse") &&
+                document.querySelector("#foot_bar")
+            ) {
                 document.querySelector("#foot_bar").style.display = "none";
-                document.querySelector("#space").style = "height: 5rem !important; width: auto; display: flex;";
-            }else {
+                document.querySelector("#space").style =
+                    "height: 5rem !important; width: auto; display: flex;";
+            } else {
                 document.querySelector("#foot_bar").style.display = "grid";
-                document.querySelector("#space").style = "height: 0 !important; width: 0; display: none;";
+                document.querySelector("#space").style =
+                    "height: 0 !important; width: 0; display: none;";
             }
         }
-    }, [ selectRoute ]);
+    }, [selectRoute]);
 
-    return (
-        !isPhoneView ? <>
+    return !isPhoneView ? (
+        <>
             <span id="space"></span>
             <footer id="foot_bar" className={Style.footer}>
                 <div className={Style.footer_top}>
                     <div className={Style.footer_top_sections}>
                         <Image
+                            onClick={() => {
+                                router.push("/");
+                            }}
                             src={"/logo_widht_high.svg"}
                             width={260}
                             height={50}
@@ -95,7 +103,9 @@ export default function Footer() {
                                 <Link href={"/privacy"}>Privacy Policy</Link>
                             </li>
                             <li>
-                                <Link href={"/accessibility"}>Accessibility statement</Link>
+                                <Link href={"/accessibility"}>
+                                    Accessibility statement
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -162,16 +172,19 @@ export default function Footer() {
                 </div>
             </footer>
         </>
-        :
+    ) : (
         <>
             <span id="space"></span>
             <footer id="foot_bar" className={Style.footer}>
-            <Image
-                            src={"/logo_widht_high.svg"}
-                            width={260}
-                            height={50}
-                            alt={"logo"}
-                        />
+                <Image
+                    onClick={() => {
+                        router.push("/");
+                    }}
+                    src={"/logo_widht_high.svg"}
+                    width={230}
+                    height={50}
+                    alt={"logo"}
+                />
                 <div className={Style.footer_top}>
                     <div className={Style.footer_top_sections_head}>
                         <div className={Style.footer_top_sections}>
@@ -180,7 +193,9 @@ export default function Footer() {
                                     <a href={"/browse"}>Browse Cravings</a>
                                 </li>
                                 <li>
-                                    <a href={"/ambassadors"}>Ambassador login</a>
+                                    <a href={"/ambassadors"}>
+                                        Ambassador login
+                                    </a>
                                 </li>
                                 <li>
                                     <a href={"/how-it-works"}>How it works</a>
@@ -192,46 +207,50 @@ export default function Footer() {
                         </div>
                         <div className={Style.footer_top_sections}>
                             <ul>
-                            <li>
+                                <li>
                                     <Link href={"/contact"}>Contact us</Link>
                                 </li>
                                 <li>
                                     <Link href={"/terms"}>Terms</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/privacy"}>Privacy Policy</Link>
+                                    <Link href={"/privacy"}>
+                                        Privacy Policy
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/accessibility"}>Accessibility statement</Link>
+                                    <Link href={"/accessibility"}>
+                                        Accessibility statement
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className={Style.emial_field}>
-                            <input
-                                placeholder="Enter your email"
-                                type="email"
-                                name="email"
-                                id="email"
+                    <input
+                        placeholder="Enter your email"
+                        type="email"
+                        name="email"
+                        id="email"
+                    />
+                    <button>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="M14.4724 1.5283C14.6552 1.71107 14.7158 1.98302 14.628 2.22614L10.2944 14.2261C10.2881 14.2435 10.2811 14.2606 10.2734 14.2774C10.191 14.4573 10.0587 14.6097 9.89213 14.7166C9.72561 14.8235 9.5319 14.8803 9.33403 14.8803C9.13616 14.8803 8.94246 14.8235 8.77594 14.7166C8.61338 14.6123 8.4834 14.4646 8.40062 14.2902L6.17073 9.82993L1.71013 7.59976C1.53583 7.51698 1.38811 7.38701 1.28379 7.22446C1.17693 7.05793 1.12012 6.86423 1.12012 6.66636C1.12012 6.46849 1.17693 6.27479 1.28379 6.10826C1.39066 5.94174 1.54309 5.8094 1.72297 5.72697C1.73977 5.71927 1.75689 5.71227 1.77427 5.70599L13.7746 1.37266C14.0177 1.28487 14.2896 1.34552 14.4724 1.5283ZM7.4788 9.46468L9.28883 13.0852L12.3586 4.58493L7.4788 9.46468ZM11.4159 3.64198L2.91523 6.71159L6.536 8.52186L11.4159 3.64198Z"
+                                fill="black"
                             />
-                            <button>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    fill="none"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M14.4724 1.5283C14.6552 1.71107 14.7158 1.98302 14.628 2.22614L10.2944 14.2261C10.2881 14.2435 10.2811 14.2606 10.2734 14.2774C10.191 14.4573 10.0587 14.6097 9.89213 14.7166C9.72561 14.8235 9.5319 14.8803 9.33403 14.8803C9.13616 14.8803 8.94246 14.8235 8.77594 14.7166C8.61338 14.6123 8.4834 14.4646 8.40062 14.2902L6.17073 9.82993L1.71013 7.59976C1.53583 7.51698 1.38811 7.38701 1.28379 7.22446C1.17693 7.05793 1.12012 6.86423 1.12012 6.66636C1.12012 6.46849 1.17693 6.27479 1.28379 6.10826C1.39066 5.94174 1.54309 5.8094 1.72297 5.72697C1.73977 5.71927 1.75689 5.71227 1.77427 5.70599L13.7746 1.37266C14.0177 1.28487 14.2896 1.34552 14.4724 1.5283ZM7.4788 9.46468L9.28883 13.0852L12.3586 4.58493L7.4788 9.46468ZM11.4159 3.64198L2.91523 6.71159L6.536 8.52186L11.4159 3.64198Z"
-                                        fill="black"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
+                        </svg>
+                    </button>
+                </div>
                 <div className={Style.footer_bottom}>
                     <div className={Style.footer_bottom_left}>
                         <h2>Get 20% off your first order</h2>

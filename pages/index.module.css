@@ -36,16 +36,27 @@
 }
 
 .hero_left p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 500;
 }
 
-.hero_left p span {
+.hero_span {
     background: linear-gradient(90deg, #65D5E7 0%, #0487FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.hero_span_new {
+    font-size: 1.4rem;
+    display: inline-block;
+    letter-spacing: 0.06px;
+    font-weight: 600;
+    color: #333;
+    margin-right: 3px;
 }
 
 .hero_right {
@@ -147,6 +158,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.categoryes_images {
+    width: 3rem;
+    height: 3rem;
+    background: #32E0FB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .categorys {
@@ -158,6 +180,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 5rem;
+    height: 5rem;
 }
 
 .categorys h3 {
@@ -347,6 +371,12 @@
 .locations_left h1 {
     font-family: Expletus Sans;
     font-size: 3rem;
+}
+
+.locations_left p {
+    color: #545454;
+    font-size: 0.97rem;
+    width: 80%;
 }
 
 .locations_right {

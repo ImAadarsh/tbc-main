@@ -31,6 +31,10 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+input::placeholder {
+    color: rgba(84, 84, 84, 0.32);
+}
+
 ::-webkit-scrollbar {
     width: 6px;
     height: 0;

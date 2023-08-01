@@ -90,6 +90,9 @@ export default function Header() {
                                     )
                                         ? "12px"
                                         : "none",
+                                    fontWeight: selectRoute.includes("/browse")
+                                        ? 600
+                                        : 400,
                                 }}
                                 href={"/browse"}
                             >
@@ -114,6 +117,9 @@ export default function Header() {
                                     )
                                         ? "12px"
                                         : "none",
+                                    fontWeight: selectRoute.includes("/how-it-works")
+                                        ? 600
+                                        : 400,
                                 }}
                                 href={"/how-it-works"}
                             >
@@ -132,6 +138,9 @@ export default function Header() {
                                     borderRadius: selectRoute.includes("/faq")
                                         ? "12px"
                                         : "none",
+                                    fontWeight: selectRoute.includes("/faq")
+                                        ? 600
+                                        : 400,
                                 }}
                                 href={"/faq"}
                             >

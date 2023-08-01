@@ -51,6 +51,13 @@ const platesItems = [
     },
 ];
 
+const images = [
+    "",
+    "../dish_item.svg",
+    "../cake.svg",
+    "../sandwich.svg",
+]
+
 export default function Index() {
     const [platePosition, setPlatePosition] = useState(7);
     const [ isPhone, setIsPhone ] = useState(false);
@@ -98,7 +105,7 @@ export default function Index() {
                             Bostonian
                         </h1>
                         <p>
-                            <span id="kitchen">Steal our kitchen.</span> Everything for $5
+                            <span id="kitchen" className={Style.hero_span}>Steal our kitchen.</span> Everything for <span className={Style.hero_span_new}>$5</span>
                             *Good news: rate includes taxes unlike other apps
                         </p>
                         <ZipCode placeholder={"Enter Zip code"} id={"1"} />
@@ -176,7 +183,7 @@ export default function Index() {
                         <div
                             className={`${Style.categorys} ${Style.categories_select}`}
                         >
-                            <div className={Style.categoryes_image}>
+                            <div className={Style.categoryes_images}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="32"
@@ -253,7 +260,7 @@ export default function Index() {
                                         <ItemCard
                                             key={item}
                                             id={item}
-                                            image={"../dish_item.svg"}
+                                            image={images[item]}
                                             name={"Blueberry Pancakes"}
                                             price={"$5"}
                                             time={"45 - 60 min"}
@@ -279,6 +286,7 @@ export default function Index() {
                     <div className={Style.how_it_work_cards}>
                         <div className={Style.how_it_work_card}>
                             <svg
+                                style={{width: "7rem", height: "7rem"}}
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="157"
                                 height="157"
@@ -351,6 +359,7 @@ export default function Index() {
                         </div>
                         <div className={Style.how_it_work_card}>
                             <svg
+                                style={{width: "7rem", height: "7rem"}}
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="157"
                                 height="157"
@@ -388,7 +397,7 @@ export default function Index() {
                             </p>
                         </div>
                         <div className={Style.how_it_work_card}>
-                            <img src="/smile.svg"/>
+                            <img style={{width: "7rem", height: "7rem"}} src="/smile.svg"/>
                             <h3>Enjoy your cravings</h3>
                             <p>
                                 High in quality and quantity. Enjoy these
@@ -470,21 +479,21 @@ export default function Index() {
                     </div>
                     <div className={Style.how_it_work_cards}>
                         <div className={Style.how_it_work_card}>
-                        <img src="./check.svg" alt="check" />
+                        <img style={{width: "3.8rem", height: "3.8rem"}} src="./check.svg" alt="check" />
                             <h3>Cravings updated weekly</h3>
                             <p>
                             Our cravings are crafted by our experienced chefs in our world-class kitchen
                             </p>
                         </div>
                         <div className={Style.how_it_work_card}>
-                            <img src="./check.svg" alt="check" />
+                            <img style={{width: "3.8rem", height: "3.8rem"}} src="./check.svg" alt="check" />
                             <h3>Most innovative dishes in town</h3>
                             <p>
                             Rigorous research on Cravingsthat you will love without breaking the bank. Say goodbye to “Doordash”
                             </p>
                         </div>
                         <div className={Style.how_it_work_card}>
-                        <img src="./check.svg" alt="check" />
+                        <img style={{width: "3.8rem", height: "3.8rem"}} src="./check.svg" alt="check" />
                             <h3>We care more than any other company</h3>
                             <p>
                             We deliver to you even at 2 AM when you arrive home from a party, Say goodbye to “McDonald's”

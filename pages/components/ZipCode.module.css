@@ -1,11 +1,12 @@
 .zipCode {
     display: flex;
-    width: fit-content;
+    width: 22rem;
     height: 2rem;
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     align-items: center;
-    border-radius: 0.8rem;
+    border-radius: 1.1rem;
     background: var(--colors-gray-f-5-f-5-f-5100, #F5F5F5);
+    justify-content: space-between;
 }
 
 .zipCode input {
