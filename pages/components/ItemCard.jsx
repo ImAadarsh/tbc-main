@@ -14,7 +14,7 @@ export default function ItemCard(props) {
         if(hide) {
             disableScroll.on();
             for(let i = 0; i < document.getElementsByClassName("control-dots").length; i++) {
-                document.getElementsByClassName("control-dots")[i].style.left = "0px";
+                document.getElementsByClassName("control-dots")[i].style.left = "0rem";
             }
         }else {
             disableScroll.off();
@@ -132,6 +132,11 @@ export default function ItemCard(props) {
                 <div
                     id={`popup_container_${props.id}`}
                     className={Style.categories_select_container}
+                    onClick={(e) => {
+                        if(e.target.id === `popup_container_${props.id}`) {
+                            setHide(false);
+                        }
+                    }}
                 >
                     <div className={Style.categories_select_card}>
                         <div className={Style.categories_select_card_head}>

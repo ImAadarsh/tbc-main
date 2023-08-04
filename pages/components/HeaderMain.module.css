@@ -148,10 +148,10 @@
     display: flex;
     align-items: center;
     column-gap: 0.7rem;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #545454cc;
-    font-weight: 600;
-    padding: 0.3rem 0.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0.7rem;
     text-decoration: none;
 }
 
@@ -167,14 +167,16 @@
     align-items: center;
     padding: 0.5rem 1.5rem;
     width: -webkit-fill-available;
-    height: 100%;
     align-items: flex-end;
+    position: absolute;
+    bottom: 0.5rem;
 }
 
 .checkout_btn button {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     width: 100%;
-    padding: 0.8rem;
+    padding: 1.1rem;
+    border-radius: 1.1rem;
 }
 
 @media screen and (max-width: 1000px) {

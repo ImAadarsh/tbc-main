@@ -26,14 +26,18 @@ export default function Items() {
         <>
             <div className={Style.Items_Container}>
                 <div className={Style.items_categoryes_top}>
-                    <div className={Style.items_filter}>
-                        <div
-                            onClick={() => {
+                    <div onClick={(e) => {
+                            if(e.target.id === "item_cls") {
                                 setFilterShow(!filterShow);
-                            }}
+                            }
+                        }} id="item_cls" className={Style.items_filter}>
+                        <div
                             className={Style.items_filter_left}
                         >
                             <svg
+                                onClick={() => {
+                                    setFilterShow(!filterShow);
+                                }}
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="20"
                                 height="20"
@@ -49,10 +53,10 @@ export default function Items() {
                             </svg>
                         </div>
                         <div
+                            className={Style.items_filter_right}
                             onClick={() => {
                                 setFilterShow(!filterShow);
                             }}
-                            className={Style.items_filter_right}
                         >
                             <h4>Filters</h4>
                         </div>

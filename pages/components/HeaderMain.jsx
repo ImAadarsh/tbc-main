@@ -189,7 +189,7 @@ export default function Header() {
                         <div className={Style.cart_items}>
                             <div className={Style.cart_items_head}>
                                 <h2>ITEMS</h2>
-                                <h2>QTY</h2>
+                                <h2 style={{marginRight: "1.5rem"}}>QTY</h2>
                             </div>
                             <div className={Style.cart_item}>
                                 <div className={Style.cart_item_img}>
@@ -312,7 +312,7 @@ export default function Header() {
                                 setCartShow(false);
                             }} className={Style.checkout_btn}>
                                 <button className="button_main">
-                                    Checkout - $250.00
+                                    Checkout - $25.00
                                 </button>
                             </Link>
                         </div>

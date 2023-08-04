@@ -179,7 +179,7 @@ input::placeholder {
     gap: 0.5rem;
     border: none;
     border-radius: 1.25rem;
-    background: var(--colors-primary-10, rgba(50, 224, 251, 0.10));
+    background: var(--primary-background);
     backdrop-filter: blur(2px);
     cursor: pointer;
 }

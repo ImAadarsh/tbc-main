@@ -36,7 +36,7 @@
 }
 
 .hero_left p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 500;
 }
@@ -258,13 +258,13 @@
 .how_it_work_cards svg {
     width: 5rem;
     height: 5rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1.2rem;
 }
 
 .how_it_work_cards img {
     width: 5rem;
     height: 5rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1.2rem;
 }
 
 .how_it_work_card h3 {

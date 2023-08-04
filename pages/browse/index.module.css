@@ -183,14 +183,17 @@
 
 .filter_bottom_bar button {
     width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
 }
 
 .button_next {
     background: none;
+    color: rgba(84, 84, 84, 0.897);
 }
 
 .button_next:hover {
-    background: none;
+    background: rgba(0, 0, 0, 0.075);
 }
 
 .bottom_card_div {

@@ -44,9 +44,10 @@
     border: none;
     outline: none;
     background: transparent;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: lighter;
     border-bottom: 2px solid rgba(84, 84, 84, 0.16);
+    padding-right: 2.5rem;
 }
 
 .emial_field input::placeholder {

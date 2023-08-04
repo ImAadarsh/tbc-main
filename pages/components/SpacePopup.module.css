@@ -14,7 +14,7 @@
 }
 
 .SpacePopup {
-    width: 23.5rem !important;
+    width: 26rem !important;
     flex-shrink: 0;
     border-start-start-radius: 1.5rem;
     background: #fff;
@@ -22,6 +22,7 @@
     justify-content: flex-start;
     flex-direction: column;
     text-align: center;
+    padding: 0.8rem;
 }
 
 .SpacePopup_card_head {

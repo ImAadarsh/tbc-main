@@ -1,7 +1,6 @@
 .zipCode {
     display: flex;
     width: 22rem;
-    height: 2rem;
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     align-items: center;
     border-radius: 1.1rem;
@@ -24,7 +23,7 @@
 
 .zipCode button {
     display: flex;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     justify-content: center;
     font-size: 1rem;
     font-weight: 600;
