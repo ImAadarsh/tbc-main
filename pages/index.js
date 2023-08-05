@@ -11,12 +11,12 @@ export default function Home() {
             flexDirection: "column",
             padding: "20px" // Added padding for better spacing on smaller screens
         }}>
-            <img src="/Logo_Full.svg" alt="logo" style={{ maxWidth: "100%", marginBottom: "20px" }} /><br/>
-            <h1 style={{ fontSize: "24px", textAlign: "center", marginBottom: "20px" }}>Launching Soon</h1><br/>
+            <img src="/Logo_Full.svg" alt="logo" style={{ maxWidth: "100%", marginBottom: "10px" }} /><br/>
+            <h1 style={{ fontSize: "24px", textAlign: "center", marginBottom: "10px" }}>Launching Soon</h1><br/>
             <Link href={'/ambassadors'}>
                 <button onClick={() => {
                     handelLogin()
-                }} className="primary_button" style={{ width: "100%" }}>Amabassador Login</button>
+                }} className="primary_button" style={{ width: "100%", fontSize: "14px", fontStyle: "none" }}>Amabassador Login</button>
             </Link>
         </div>
     );
