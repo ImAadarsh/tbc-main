@@ -16,7 +16,7 @@ export default function Home() {
             <Link href={'/ambassadors'}>
                 <button onClick={() => {
                     handelLogin()
-                }} className="primary_button" style={{ width: "85%" }}>Amabassador Login</button>
+                }} className="primary_button" style={{ width: "100%" }}>Amabassador Login</button>
             </Link>
         </div>
     );
