@@ -26,7 +26,7 @@
 .mid ul {
     display: flex;
     align-items: center;
-    column-gap: 4rem;
+    column-gap: 3rem;
     list-style: none;
 }
 
@@ -35,6 +35,12 @@
     color: var(--primary-text-color);
     text-decoration: none;
     transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+}
+
+.mid ul li a:hover {
+    background: rgba(50, 224, 251, 0.15) !important;
 }
 
 .hamebargar {

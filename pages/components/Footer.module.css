@@ -34,6 +34,10 @@
     color: inherit;
 }
 
+.footer_top_sections ul li a:hover {
+    color: var(--colors-primary-100, #32E0FB);
+}
+
 .emial_field {
     display: flex;
     column-gap: 1.2rem;
