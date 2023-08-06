@@ -27,6 +27,9 @@ export default function Items() {
             <div className={Style.Items_Container}>
                 <div className={Style.items_categoryes_top}>
                     <div onClick={(e) => {
+                            if(e.target.id === "SpacePopup_1") {
+                                setFilterShow(!filterShow);
+                            }
                             if(e.target.id === "item_cls") {
                                 setFilterShow(!filterShow);
                             }

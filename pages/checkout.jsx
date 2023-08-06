@@ -49,7 +49,7 @@ export default function checkout() {
                                     <div className={Style.cart_items_head}>
                                         <h2>ITEMS</h2>
                                         <h2 className={Style.qty}>QTY</h2>
-                                        <h2>AMOUNT</h2>
+                                        <h2 className={Style.amt}>AMOUNT</h2>
                                     </div>
                                     <div className={Style.cart_item}>
                                         <div className={Style.cart_item_img}>
@@ -204,7 +204,7 @@ export default function checkout() {
                                         Phone Number <span>*</span>
                                     </label>
                                     <input
-                                        placeholder="89xxxxxx"
+                                        // placeholder="89xxxxxx"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -219,7 +219,7 @@ export default function checkout() {
                                         Email <span>*</span>
                                     </label>
                                     <input
-                                        placeholder="jhondeo@mail.com"
+                                        // placeholder="jhondeo@mail.com"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -234,7 +234,7 @@ export default function checkout() {
                                         Address <span>*</span>
                                     </label>
                                     <input
-                                        placeholder="185 wellstreet"
+                                        // placeholder="185 wellstreet"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -249,7 +249,7 @@ export default function checkout() {
                                         City <span>*</span>
                                     </label>
                                     <input
-                                        placeholder="Boston"
+                                        // placeholder="Boston"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -264,7 +264,7 @@ export default function checkout() {
                                         State <span>*</span>
                                     </label>
                                     <input
-                                        placeholder="New York"
+                                        // placeholder="New York"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -279,7 +279,7 @@ export default function checkout() {
                                         Zip Code <span>*</span>
                                     </label>
                                     <input
-                                        placeholder="3468"
+                                        // placeholder="3468"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -382,7 +382,7 @@ export default function checkout() {
                 </div>
                 <div className={Style.right_side}>
                     <div className={Style.card_details}>
-                        <h2>My Cards</h2>
+                        <h2>My cards</h2>
                         <div className={Style.card_details_top}>
                             <div
                                 className={
@@ -393,7 +393,7 @@ export default function checkout() {
                                     Credit Card Number <span>*</span>
                                 </label>
                                 <input
-                                    placeholder="3409 1203 xxxx xxxx"
+                                    // placeholder="3409 1203 xxxx xxxx"
                                     type="text"
                                     name="name"
                                     id="name"
@@ -410,7 +410,7 @@ export default function checkout() {
                                     Expiration Data <span>*</span>
                                 </label>
                                 <input
-                                    placeholder="11/xx"
+                                    // placeholder="11/xx"
                                     type="text"
                                     name="name"
                                     id="name"
@@ -425,7 +425,7 @@ export default function checkout() {
                                     CVV <span>*</span>
                                 </label>
                                 <input
-                                    placeholder="xxx"
+                                    // placeholder="xxx"
                                     type="text"
                                     name="name"
                                     id="name"

@@ -63,7 +63,11 @@ export default function Header() {
                     </svg>
                 </div>
             </div>
-            <header className={Style.header}>
+            <header onClick={(e) => {
+                if(e.target.id === "SpacePopup_2") {
+                    setCartShow(!cartShow);
+                }
+            }} className={Style.header}>
                 <div className={Style.left}>
                     <img
                         onClick={() => {
