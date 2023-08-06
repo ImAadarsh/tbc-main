@@ -355,19 +355,31 @@
 .order_tip_select {
     border: 2px solid var(--colors-primary-100, #32E0FB) !important;
     background: var(--colors-primary-10, rgba(50, 224, 251, 0.10)) !important;
+    color: black !important;
 }
 
 .tip_column input {
     border: none;
     outline: none;
     background: transparent;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+}
+
+.tip_column input::placeholder {
+    color: #545454;
+    font-weight: 700;
+}
+
+.tip_column h4 {
+    font-weight: 800;
+    color: #545454;
 }
 
 .order_button {
-    padding: 0.8rem 0;
+    padding: 1.2rem 0;
     font-size: 1.2rem;
     margin-top: 1rem;
+    border-radius: 18px;
 }
 
 .Float_order_button {

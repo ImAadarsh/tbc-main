@@ -35,6 +35,10 @@ input::placeholder {
     color: rgba(84, 84, 84, 0.32);
 }
 
+textarea::placeholder {
+    color: rgba(84, 84, 84, 0.32);
+}
+
 #SpacePopup_1 {
     cursor: default;
 }

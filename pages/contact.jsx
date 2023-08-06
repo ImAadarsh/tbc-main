@@ -24,7 +24,7 @@ export default function contact() {
                         </div>
                         <div className={Style.contact_field}>
                             <label htmlFor="sub">
-                                Submject<span>*</span>
+                                Subject<span>*</span>
                             </label>
                             <input
                                 type="text"
@@ -36,7 +36,8 @@ export default function contact() {
                             <label htmlFor="msg">
                                 Message<span>*</span>
                             </label>
-                            <input
+                            <textarea
+                                rows={2}
                                 type="text"
                                 name="msg"
                                 placeholder="Add your message here"
