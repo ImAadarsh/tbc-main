@@ -6,6 +6,11 @@ export default function Document() {
             <Head>
                 <head>
                     <title>The Boston Cravings</title>
+        <script
+            defer
+            src="https://notifyverse.in/pixel/pe9uf9i3o9zxnc3n67iepf2whj7p2pxv"
+          ></script>
+       
                 </head>
             </Head>
             <body>
