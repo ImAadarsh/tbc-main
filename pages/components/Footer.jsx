@@ -53,7 +53,7 @@ export default function Footer() {
                                 name="email"
                                 id="email"
                             />
-                            <button>
+                            <button className="button_main">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"

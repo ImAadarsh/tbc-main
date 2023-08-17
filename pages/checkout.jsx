@@ -15,7 +15,7 @@ export default function checkout() {
                         }}
                         className={Style.back_container}
                     >
-                        <img src="/back.svg" alt="back" />
+                        <img style={{cursor: "pointer"}} src="/back.svg" alt="back" />
                     </div>
                     <div className={Style.checkout_details}>
                         <div className={Style.checkout_summary}>
